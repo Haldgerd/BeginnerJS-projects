@@ -19,8 +19,10 @@ function save() {
 
   savedValue = display.innerText; //number data
   console.log(savedValue); // in reality you would save this into json file. And load it back when program is opened again.
-  savedNum += savedValue + "-";
+  savedNum += savedValue + " -";
 
   displaySaves.innerText += savedNum;
+  display.innerText = 0;
+  count = 0;
 }
 
