@@ -1,6 +1,7 @@
 let count = 0;
 let savedValue = 0;
-let display = document.getElementsByClassName('count-eng')[0]
+let display = document.getElementsByClassName('count-eng')[0];
+let displaySaves = document.getElementsByClassName('txt')[0];
 
 console.log(document.getElementsByClassName('count-eng'));
 
@@ -14,7 +15,12 @@ function increment() {
 
 
 function save() {
-  savedValue = display.innerText;
-  console.log(savedValue); 
+  let savedNum = "  ";
+
+  savedValue = display.innerText; //number data
+  console.log(savedValue); // in reality you would save this into json file. And load it back when program is opened again.
+  savedNum += savedValue + "-";
+
+  displaySaves.innerText += savedNum;
 }
 
