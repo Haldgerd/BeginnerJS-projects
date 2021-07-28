@@ -27,10 +27,16 @@ body {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   color: var(--col-yellowSmokey);
   margin-bottom: 1em;
   text-transform: uppercase;
+}
+
+h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1em;
+  text-align: center;
 }
 
 button {
@@ -48,6 +54,7 @@ button {
 
 button:active {
   transform: translateY(3px);
+  background-color: var(--col-superLighGreen);
   transition: 0.3s all;
 }
 

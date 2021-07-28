@@ -13,13 +13,17 @@
     <main class="container">
       <h1 class="title">Blackjack</h1>
       <h2 class="casting"></h2>
-      <p class="cards">Cards: 10 4</p>
-      <p class="sum">Sum:</p>
+      <p class="cards">
+        Cards:
+        <span class="cardOne"></span>
+        <span class="cardTwo"></span>
+      </p>
+      <p class="sum"></p>
 
-      <button class="startGame">Start game</button>
-      <button class="addCard">deal card</button>
+      <button class="startGame" onclick="start()">Start game</button>
+      <button class="addCard" onclick="addCard()">deal card</button>
 
-      <p class="betWager">Per:</p>
+      <p class="betWager">Per: 200eur</p>
     </main>
 
     <!--external JS file link-->
