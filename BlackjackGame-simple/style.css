@@ -1,0 +1,77 @@
+:root {
+  --col-darkGreen: rgb(44, 148, 101);
+  --col-lightGreen: rgb(70, 176, 150);
+  --col-yellowSmokey: rgb(255, 209, 110);
+  --col-superLighGreen: rgb(98, 217, 173);
+  --col--duskBlack: rgb(0, 0, 0);
+  font-size: 1rem;
+}
+
+/* general styling */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  background-color: var(--col-darkGreen);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace;
+}
+
+h1 {
+  font-size: 3rem;
+  color: var(--col-yellowSmokey);
+  margin-bottom: 1em;
+  text-transform: uppercase;
+}
+
+button {
+  text-transform: uppercase;
+  padding: 0.75em;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  color: var(--col-darkGreen);
+  width: 80%;
+  background-color: var(--col-yellowSmokey);
+  border: none;
+  border-radius: 50px;
+  transition: 0.3s all;
+}
+
+button:active {
+  transform: translateY(3px);
+  transition: 0.3s all;
+}
+
+button + button {
+  margin: 0.7em 0 1em;
+}
+
+p {
+  font-size: 1.25rem;
+}
+
+p + p {
+  margin: 1.2em 0;
+}
+
+/* component styling*/
+
+.container {
+  border: 10px solid var(--col--duskBlack);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  min-height: 50vh;
+  background-color: var(--col-lightGreen);
+  padding: 2em;
+}
