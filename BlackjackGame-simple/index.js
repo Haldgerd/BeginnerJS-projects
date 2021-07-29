@@ -1,7 +1,5 @@
 // variable initialization
 
-let displayCardOne = document.getElementsByClassName('cardOne')[0];
-let displayCardTwo = document.getElementsByClassName('cardTwo')[0];
 let wager = document.getElementsByClassName('betWager')[0];
 let cast = document.getElementsByClassName('casting')[0];
 let cardDisplay = document.getElementsByClassName('cards')[0];
@@ -16,19 +14,12 @@ function setInitial() {
   array = [];
   console.log(array);
   console.log(cardDisplay);
-  displayCardTwo.innerHTML = "";
-  displayCardOne.innerHTML = "";
+  cardDisplay.innerHTML = "Cards: ";
  
-  console.log(document.getElementsByClassName('newCard'));
-
-  for (let i in document.getElementsByClassName('newCard')) {
-    document.getElementsByClassName('newCard')[i].remove();
-  }
-
-  console.log(document.getElementsByClassName('newCard'))
-
+ 
   document.getElementsByClassName('sum')[0].innerHTML = "Sum: "; //inital valueMath.floor((Math.random() * 12) + 1);
   cast.innerHTML = "Play again! Press start game.";
+  dealCards();
 }
 
 
@@ -44,22 +35,27 @@ function sum() {
 
 
 function dealCards() {
-  displayCardOne.innerHTML = cardONe;
-  displayCardTwo.innerHTML = cardTwo; 
+  cardONe = Math.floor((Math.random() * 12) + 1);
+  cardTwo = Math.floor((Math.random() * 12) + 1);
   array.push(cardONe, cardTwo);
+  for (let i in array) {
+    cardDisplay.innerHTML += " " + array[i];
+  }
 }
   
 function addCard() {    
     console.log("dealing a new card");
     let newCard = Math.floor((Math.random() * 12) + 1);
 
-    const newAdd = document.createElement('span');
-    newAdd.classList.add('newCard');
-    const node = document.createTextNode(" " + newCard);
-    newAdd.appendChild(node);
-    cardDisplay.appendChild(newAdd);
+    // A way to create a new element in DOM.
+    // const newAdd = document.createElement('span');
+    // newAdd.classList.add('newCard');
+    // const node = document.createTextNode(" " + newCard);
+    // newAdd.appendChild(node);
+    // cardDisplay.appendChild(newAdd);
 
     array.push(newCard);
+    cardDisplay.innerHTML += " " + newCard;
     start();
   }
 
