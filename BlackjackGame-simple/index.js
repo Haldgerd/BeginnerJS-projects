@@ -27,9 +27,16 @@ function sum() {
 }
 
 function dealCards() {
-  let cardONe = Math.floor((Math.random() * 12) + 1);
-  let cardTwo = Math.floor((Math.random() * 12) + 1);
+  let cardONe = Math.floor((Math.random() * 10) + 1);
+  let cardTwo = Math.floor((Math.random() * 10) + 1);
 
+  if (cardONe === 1) {
+    cardONe = 1;
+  }
+  if (cardTwo === 1) {
+    cardTwo = 1;
+  }
+  
   array.push(cardONe, cardTwo);
   for (let i in array) {
     cardDisplay.innerHTML += " " + array[i];
@@ -38,7 +45,11 @@ function dealCards() {
   
 function addCard() {    
     console.log("dealing a new card");
-    let newCard = Math.floor((Math.random() * 12) + 1);
+    let newCard = Math.floor((Math.random() * 10) + 1);
+
+    if (newCard === 1) {
+      newCard = 11;
+    } 
 
     // A way to create a new element in DOM.
     // const newAdd = document.createElement('span');
