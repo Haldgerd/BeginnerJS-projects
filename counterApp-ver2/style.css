@@ -1,0 +1,65 @@
+:root {
+  --col-white: white;
+  --col-black: black;
+  font-size: 1rem;
+  font-family: monospace;
+  overflow: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* GENERAL STYLING*/
+/*==================*/
+
+h1 {
+  color: var(--col-black);
+  text-transform: capitalize;
+}
+
+button {
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 1.1rem;
+  padding: 0.5em;
+  width: 70%;
+  border: 4px solid var(--col-black);
+  background-color: none;
+  text-transform: uppercase;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button + button {
+  margin-left: 2em;
+}
+
+button:hover {
+  background-color: var(--col-black);
+  color: var(--col-white);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+p {
+  margin: 1em 0 1em;
+  font-size: 5rem;
+}
+
+/*SPECIFIC element STYLING */
+/* ======================*/
+
+.container {
+  transform: translateY(50%);
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-container {
+  display: flex;
+}
