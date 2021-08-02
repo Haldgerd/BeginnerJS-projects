@@ -6,7 +6,7 @@ let counterTrack = 0;
 
 
 buttonIncrease.addEventListener("click", function() {
-  counterTrack += 1;
+  counterTrack++;
   counterDisplay.textContent = counterTrack; 
   if (counterTrack < 0) {
     counterDisplay.style.color = "red";
@@ -22,13 +22,9 @@ buttonReset.addEventListener("click", function() {
 });
 
 buttonDecrease.addEventListener("click", function() {
-  counterTrack -= 1;
+  counterTrack--;
   counterDisplay.textContent = counterTrack; 
   if (counterTrack < 0) {
      counterDisplay.style.color = "red";
   }
 });
-
-if (counterTrack == 0) {
-  counterDisplay.style.color = "black";
-}
