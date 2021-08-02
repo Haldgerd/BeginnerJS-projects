@@ -13,8 +13,6 @@ function setInitial() {
   cardDisplay.innerHTML = "Cards: ";
   document.getElementsByClassName('sum')[0].innerHTML = "Sum: "; 
   cast.innerHTML = "Play again! Press start game.";
-
-  dealCards();
 }
 
 function sum() {
@@ -43,7 +41,11 @@ function dealCards() {
   }
 }
   
-function addCard() {    
+function addCard() {  
+  let sumNums = sum();
+  if (sumNums > 21 || sumNums === 21) {
+    console.log("Can't draw new cards!");
+  } else {
     console.log("dealing a new card");
     let newCard = Math.floor((Math.random() * 10) + 1);
 
@@ -51,23 +53,25 @@ function addCard() {
       newCard = 11;
     } 
 
-    // A way to create a new element in DOM.
-    // const newAdd = document.createElement('span');
-    // newAdd.classList.add('newCard');
-    // const node = document.createTextNode(" " + newCard);
-    // newAdd.appendChild(node);
-    // cardDisplay.appendChild(newAdd);
+      // A way to create a new element in DOM.
+      // const newAdd = document.createElement('span');
+      // newAdd.classList.add('newCard');
+      // const node = document.createTextNode(" " + newCard);
+      // newAdd.appendChild(node);
+      // cardDisplay.appendChild(newAdd);
 
     array.push(newCard);
     cardDisplay.innerHTML += " " + newCard;
     start();
   }
+}
 
-function start() {
+
+function calculateOutcome() {
   let sumOfCards = sum();
 
   document.getElementsByClassName('sum')[0].innerHTML = "Sum: " + sumOfCards;
-  
+      
   if (sumOfCards < 21) {
     cast.innerHTML = "Would you like to draw another card?";
   } else if (sumOfCards === 21) {
@@ -77,9 +81,17 @@ function start() {
   } else {
     cast.innerHTML = "You're out of the game!";
     setTimeout(setInitial, 4000);
-
   }
 }
 
-// init main app functionallity. Program.
-dealCards();
+function start() {
+  if (array === undefined || array.length == 0) {
+    dealCards();
+    calculateOutcome();
+    } else {
+      calculateOutcome();
+    }
+}
+
+// // init main app functionallity. Program.
+// dealCards();
