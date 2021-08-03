@@ -1,0 +1,123 @@
+:root {
+  --col-purpleBlue: rgb(90, 193, 219);
+  --col-heavenBlue: rgb(22, 22, 129);
+  --col-lightBlue: rgb(202, 233, 238);
+  font-size: 1.25rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* || GENERAL STYLES */
+
+body {
+  padding: 1em;
+  background-color: var(--col-lightBlue);
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  font-size: 3rem;
+  color: var(--col-purpleBlue);
+}
+
+button + button {
+  margin-left: 0.5em;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.2em;
+  letter-spacing: 3px;
+}
+
+h2 {
+  font-size: 2rem;
+  letter-spacing: 3px;
+}
+
+h3 {
+  color: var(--col-purpleBlue);
+  text-transform: uppercase;
+}
+
+hr {
+  width: 60%;
+  margin: 0 0 3em;
+  height: 5px;
+  border: none;
+  background-color: var(--col-purpleBlue);
+}
+
+img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  box-shadow: 13px -7px var(--col-purpleBlue);
+}
+
+p {
+  padding: 1.2em;
+}
+
+/* || SITEWIDE STYLES */
+
+.container,
+.review__container,
+.article__container,
+.review__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.review__title {
+  flex-flow: column;
+}
+
+.review__container {
+  flex-flow: column;
+  width: clamp(60%, 500px, 20vh);
+}
+
+.article__container {
+  padding: 1.5em;
+  flex-flow: column;
+  background-color: rgb(255, 255, 255);
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 2px 0px 20px rgb(140, 166, 177);
+}
+
+/* || IMAGE STYLES */
+
+.img__container {
+  padding: 0.5em;
+}
+
+/* .icon {
+  background-color: var(--col-purpleBlue);
+  width: 60px;
+  height: 60px;
+  font-size: 3rem;
+  color: white;
+} */
+
+/* || ARTICLE STYLES */
+
+.review {
+  text-align: center;
+}
+
+/* || BUTTON STYLES */
+
+.btn__container {
+  margin-top: -1.75em;
+}
