@@ -4,6 +4,7 @@
   --col-lightPeach: rgb(248, 172, 122);
   --col-darkPeach: rgb(245, 105, 11);
   --col-black: var(--col-black);
+  --col-coral: rgb(238, 52, 108);
   font-size: 1rem;
 }
 
@@ -18,6 +19,7 @@
 /* || GENERAL STYLES  */
 
 body {
+  overflow: hidden;
   background-color: var(--col-lightPeach);
   font-family: cursive;
 }
@@ -29,25 +31,27 @@ img {
 
 nav,
 .nav__main,
-.nav__base {
+.nav__base,
+.nav__social__icons {
   display: flex;
 }
 
 nav {
-  padding: 0 5em;
+  padding: 0 2em;
   background-color: rgb(241, 180, 180);
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   box-shadow: 0 2px 25px var(--col-peach);
 }
 
 i {
   color: var(--col-darkPeach);
   font-size: 2rem;
+  transition: all 0.3s;
 }
 
 i:hover {
-  color: rgb(219, 56, 38);
+  color: var(--col-coral);
   transition: all 0.3s;
 }
 
@@ -69,6 +73,14 @@ a {
   font-size: 1.25rem;
   color: var(--col-darkPeach);
   text-transform: uppercase;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--col-coral);
+  transition: color 0.3s;
 }
 
 /* || NAV TITLE STYLES */
@@ -78,26 +90,45 @@ a {
 }
 
 .nav__title {
-  margin-right: 8em;
   text-transform: uppercase;
   color: var(--col-darkPeach);
   font-size: 2rem;
   text-decoration: 8px underline;
 }
 
-/* || NAV ANCHOR TAGS STYLES */
-
 /* || MENU ICON STYLES */
+.nav__icon {
+  display: none;
+}
 
 .fa-bars {
   color: var(--col-black);
   font-size: 3rem;
-  display: none;
-  visibility: hidden;
+  transition: 0.5s;
 }
 
-/* || SOCAIL ICONS  STYLES*/
+.fa-bars:hover {
+  transform: rotate(-90deg);
+  transition: 0.5s;
+}
 
-.nav__social__icons {
-  margin-left: 10em;
+/* SHOW burger menu on specific width of viewport */
+/* || TOGGLE LINKS CONTAINER */
+@media screen and (max-width: 1200px) {
+  .nav__social__icons {
+    display: none;
+  }
+
+  /* .nav__base {
+    display: block;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 2px solid red;
+  } */
+
+  .nav__icon {
+    display: block;
+  }
 }
