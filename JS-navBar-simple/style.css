@@ -1,0 +1,103 @@
+:root {
+  --col-duskYellow: rgb(212, 212, 32);
+  --col-peach: rgb(243, 139, 70);
+  --col-lightPeach: rgb(248, 172, 122);
+  --col-darkPeach: rgb(245, 105, 11);
+  --col-black: var(--col-black);
+  font-size: 1rem;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* || GENERAL STYLES  */
+
+body {
+  background-color: var(--col-lightPeach);
+  font-family: cursive;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+}
+
+nav,
+.nav__main,
+.nav__base {
+  display: flex;
+}
+
+nav {
+  padding: 0 5em;
+  background-color: rgb(241, 180, 180);
+  align-items: center;
+  justify-content: space-evenly;
+  box-shadow: 0 2px 25px var(--col-peach);
+}
+
+i {
+  color: var(--col-darkPeach);
+  font-size: 2rem;
+}
+
+i:hover {
+  color: rgb(219, 56, 38);
+  transition: all 0.3s;
+}
+
+i + i {
+  margin-left: 0.5em;
+}
+
+li {
+  list-style-type: none;
+}
+
+li + li {
+  margin-left: 1em;
+}
+
+a {
+  color: var(--col-black);
+  text-decoration: none;
+  font-size: 1.25rem;
+  color: var(--col-darkPeach);
+  text-transform: uppercase;
+}
+
+/* || NAV TITLE STYLES */
+.nav__main {
+  justify-content: center;
+  align-items: center;
+}
+
+.nav__title {
+  margin-right: 8em;
+  text-transform: uppercase;
+  color: var(--col-darkPeach);
+  font-size: 2rem;
+  text-decoration: 8px underline;
+}
+
+/* || NAV ANCHOR TAGS STYLES */
+
+/* || MENU ICON STYLES */
+
+.fa-bars {
+  color: var(--col-black);
+  font-size: 3rem;
+  display: none;
+  visibility: hidden;
+}
+
+/* || SOCAIL ICONS  STYLES*/
+
+.nav__social__icons {
+  margin-left: 10em;
+}
