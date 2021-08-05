@@ -17,6 +17,7 @@
 /* || GENERAL STYLES */
 
 body {
+  height: 100vh;
   padding: 1em;
   background-color: var(--col-lightBlue);
 }
@@ -57,8 +58,8 @@ hr {
 }
 
 img {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   box-shadow: 13px -7px var(--col-purpleBlue);
 }
@@ -72,10 +73,15 @@ p {
 .container,
 .review__container,
 .article__container,
-.review__title {
+.review__title,
+.review {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.container {
+  height: 100vh;
 }
 
 .review__title {
@@ -100,8 +106,23 @@ p {
 
 .img__container {
   padding: 0.5em;
+  position: relative;
+  width: min-content;
 }
 
+.img__container::after {
+  content: "\201D";
+  font-size: 4rem;
+  color: white;
+  background-color: var(--col-purpleBlue);
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  top: 0px;
+  left: 0px;
+  transform: translateX(10px) translateY(15px);
+}
 /* .icon {
   background-color: var(--col-purpleBlue);
   width: 60px;
@@ -114,10 +135,18 @@ p {
 
 .review {
   text-align: center;
+  flex-flow: column;
 }
 
 /* || BUTTON STYLES */
 
 .btn__container {
   margin-top: -1.75em;
+}
+
+.btn__random {
+  font-size: 1rem;
+  border: 2px solid var(--col-purpleBlue);
+  padding: 0.3em;
+  border-radius: 7px;
 }
