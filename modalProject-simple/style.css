@@ -1,0 +1,100 @@
+/*
+=============
+variables
+=============
+*/
+:root {
+  --clr-primary-dirtyWhite: hsl(0, 0%, 86%);
+  --clr-primary-duskBlack: hsl(0, 4%, 11%);
+  --clr-primary-forestGreen: hsl(145, 39%, 13%);
+  --clr-primary-fogGreen: hsla(120, 15%, 32%, 0.616);
+  --ff-main: "Abril Fatface", cursive;
+  --ff-casual: "Bebas Neue", cursive;
+  --fs-header: 5rem;
+  --fs-button: 1.5rem;
+  --fs-icon: 2rem;
+  --btn-padding: 1em;
+  --container-padding: 1.25em 2em;
+  --bg-img: "https://i.pinimg.com/originals/64/51/d0/6451d0abaa906e6a10d96ac58e1bc687.jpg";
+}
+
+/*
+=============
+general styles
+=============
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  background-image: url("https://i.pinimg.com/originals/64/51/d0/6451d0abaa906e6a10d96ac58e1bc687.jpg");
+  background-size: 100vw 100vh;
+  background-position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: var(--fs-header);
+  color: var(--clr-primary-forestGreen);
+  margin-bottom: 0.5em;
+  text-decoration: underline 5px var(--clr-primary-forestGreen);
+  font-family: var(--ff-main);
+}
+
+button {
+  font-family: var(--ff-casual);
+  font-weight: bold;
+  padding: var(--btn-padding);
+  width: 40%;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--clr-primary-forestGreen);
+  color: var(--clr-primary-dirtyWhite);
+  text-transform: uppercase;
+  font-size: var(--fs-button);
+  transition: all 0.3s linear;
+}
+
+/*
+=============
+invisible overlay styles
+=============
+*/
+.modal__overlay {
+  display: none;
+}
+
+/*
+=============
+visible container styles
+=============
+*/
+.modal__visible {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--container-padding);
+  background-color: var(--clr-primary-dirtyWhite);
+  width: 60%;
+}
+
+/*
+=============
+visible container button styles
+=============
+*/
+.modal__button:hover {
+  background-color: var(--clr-primary-fogGreen);
+  transition: all 0.3s linear;
+  color: var(--clr-primary-forestGreen);
+}
