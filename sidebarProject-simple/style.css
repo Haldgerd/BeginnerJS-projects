@@ -115,24 +115,6 @@ aside {
   }
 }
 
-@keyframes grow {
-  0% {
-    font-size: initial;
-  }
-  50% {
-    font-size: 1.5rem;
-  }
-  100% {
-    font-size: 3rem;
-  }
-}
-
-.fa-bars {
-  animation-name: grow;
-  animation-duration: infinite;
-  animation-timing-function: ease-in-out;
-}
-
 /*
  ==================
  menu header styles
@@ -179,9 +161,5 @@ aside {
 @media screen and (min-width: 600px) {
   aside {
     width: 500px;
-  }
-
-  .menu__button {
-    display: block;
   }
 }
