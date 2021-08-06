@@ -143,16 +143,17 @@ a:hover {
     line-height: 3;
     padding-left: 2em;
     position: absolute;
+    overflow: hidden;
     left: 0;
-    top: -100px;
+    top: 100px;
     z-index: -1;
-    visibility: hidden;
+    height: 0;
     transition: 0.3s;
   }
 
   .responsive {
     transition: 0.3s;
-    visibility: visible;
+    height: 16rem;
     top: 100px;
   }
 }
