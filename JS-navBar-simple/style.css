@@ -42,6 +42,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   box-shadow: 0 2px 25px var(--col-peach);
+  transition: 0.5s;
 }
 
 i {
@@ -115,20 +116,42 @@ a:hover {
 /* SHOW burger menu on specific width of viewport */
 /* || TOGGLE LINKS CONTAINER */
 @media screen and (max-width: 1200px) {
-  .nav__social__icons {
+  .nav__social__icons
+  /* li { */ {
     display: none;
   }
 
-  /* .nav__base {
+  .nav__icon,
+  .nav__base {
     display: block;
+  }
+
+  li + li {
+    margin-left: 0;
+  }
+
+  .no-shadow {
+    box-shadow: none;
+    transition: 0.1s;
+  }
+
+  .nav__base {
     width: 100%;
+    background-color: rgb(241, 180, 180);
+    box-shadow: 0 2px 25px var(--col-peach);
+    line-height: 3;
+    padding-left: 2em;
     position: absolute;
     left: 0;
-    top: 0;
-    border: 2px solid red;
-  } */
+    top: -100px;
+    z-index: -1;
+    visibility: hidden;
+    transition: 0.3s;
+  }
 
-  .nav__icon {
-    display: block;
+  .responsive {
+    transition: 0.3s;
+    visibility: visible;
+    top: 100px;
   }
 }
