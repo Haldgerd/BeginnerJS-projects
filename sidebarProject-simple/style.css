@@ -1,0 +1,187 @@
+/*
+ ==================
+ Variables
+ ==================
+ */
+:root {
+  --clr-primary-aqua: rgb(126, 226, 193);
+  --clr-primary-green: rgb(19, 114, 78);
+  --clr-primary-lightGreen: rgb(69, 143, 9);
+  --ff-primary: monospace;
+}
+
+/*
+ ==================
+ general styles
+ ==================
+ */
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  font-family: var(--ff-primary);
+  /* flex-flow: row-reverse; */
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+h1 {
+  font-size: 2.7rem;
+  text-transform: uppercase;
+  color: var(--clr-primary-green);
+  text-decoration: underline 5px var(--clr-primary-green);
+}
+
+li {
+  display: block;
+  list-style-type: none;
+  padding: 1em;
+  transition: 0.3s;
+}
+
+li:hover {
+  background-color: var(--clr-primary-lightGreen);
+  padding-left: 2em;
+  transition: 0.3s;
+}
+
+a {
+  text-decoration: none;
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: white;
+  font-weight: bold;
+}
+
+i {
+  color: var(--clr-primary-green);
+}
+
+i:hover {
+  color: var(--clr-primary-lightGreen);
+}
+
+aside {
+  padding-bottom: 2em;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--clr-primary-aqua);
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  transform: translateX(-100%);
+  transition: all 0.3s linear;
+}
+
+/* class added when clicking on menu button, causes the sidebar to display*/
+.open {
+  transform: translateX(0);
+  transition: all 0.3s linear;
+}
+
+/*
+ ==================
+ menu button styles
+ ==================
+ */
+.menu__button {
+  position: fixed;
+  top: 1rem;
+  right: 2rem;
+  font-size: 2rem;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes grow {
+  0% {
+    font-size: initial;
+  }
+  50% {
+    font-size: 1.5rem;
+  }
+  100% {
+    font-size: 3rem;
+  }
+}
+
+.fa-bars {
+  animation-name: grow;
+  animation-duration: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+/*
+ ==================
+ menu header styles
+ ==================
+ */
+.menu__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em 1em 4em;
+}
+
+.fa-times {
+  font-size: 2.5rem;
+  transition: 0.5s;
+}
+
+.fa-times:hover {
+  transform: rotate(360deg);
+  transition: 0.5s;
+}
+
+/*
+ ==================
+ links container styles
+ ==================
+ */
+.menu__links {
+  flex: 1;
+}
+
+/*
+ ==================
+ social media links styles
+ ==================
+ */
+.menu__social {
+  align-self: center;
+}
+
+.menu__social > a {
+  margin-left: 0.5em;
+}
+
+@media screen and (min-width: 600px) {
+  aside {
+    width: 500px;
+  }
+
+  .menu__button {
+    display: block;
+  }
+}
