@@ -130,6 +130,7 @@ a:hover {
     margin-left: 0;
   }
 
+  /* Toggle menu with button transition is flawed. REVISE this section again*/
   .no-shadow {
     box-shadow: none;
     transition: 0.1s;
