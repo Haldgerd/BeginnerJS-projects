@@ -11,7 +11,7 @@ variables
   --ff-main: "Abril Fatface", cursive;
   --ff-casual: "Bebas Neue", cursive;
   --fs-header: 5rem;
-  --fs-button: 1.5rem;
+  --fs-normal: 1.5rem;
   --fs-icon: 2rem;
   --btn-padding: 1em;
   --container-padding: 1.25em 2em;
@@ -36,7 +36,6 @@ body {
   height: 100vh;
   background-image: url("https://i.pinimg.com/originals/64/51/d0/6451d0abaa906e6a10d96ac58e1bc687.jpg");
   background-size: 100vw 100vh;
-  background-position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,6 +49,18 @@ h1 {
   font-family: var(--ff-main);
 }
 
+h2 {
+  font-size: var(--fs-normal);
+  color: var(--clr-primary-forestGreen);
+  font-family: var(--ff-main);
+  padding-top: 2em;
+}
+
+i {
+  font-size: var(--fs-icon);
+  color: var(--clr-primary-duskBlack);
+}
+
 button {
   font-family: var(--ff-casual);
   font-weight: bold;
@@ -60,7 +71,7 @@ button {
   background-color: var(--clr-primary-forestGreen);
   color: var(--clr-primary-dirtyWhite);
   text-transform: uppercase;
-  font-size: var(--fs-button);
+  font-size: var(--fs-normal);
   transition: all 0.3s linear;
 }
 
@@ -71,6 +82,53 @@ invisible overlay styles
 */
 .modal__overlay {
   display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--clr-primary-fogGreen);
+  text-align: center;
+  transition: 0.3s linear;
+}
+
+/*toggle modal overlay styles */
+.modal__overlay--visible {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s linear;
+}
+
+.modal__overlay--inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: var(--clr-primary-dirtyWhite);
+  width: 60%;
+  height: 15rem;
+  padding: var(--container-padding);
+}
+
+/* modal button - close modal */
+.modal__close {
+  width: min-content;
+  position: absolute;
+  background-color: transparent;
+  top: 0.5em;
+  right: 0.5em;
+  padding: 0;
+}
+
+.fa-times {
+  color: var(--clr-primary-duskBlack);
+  transition: 0.3s linear;
+}
+
+.fa-times:hover {
+  color: var(--clr-primary-fogGreen);
+  transition: 0.3s linear;
 }
 
 /*
