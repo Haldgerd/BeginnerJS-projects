@@ -114,7 +114,7 @@ a:hover {
 }
 
 /* SHOW burger menu on specific width of viewport */
-/* || TOGGLE LINKS CONTAINER */
+/* || TOGGLE LINKS CONTAINER - MEDIA QUERY */
 @media screen and (max-width: 1200px) {
   .nav__social__icons
   /* li { */ {
