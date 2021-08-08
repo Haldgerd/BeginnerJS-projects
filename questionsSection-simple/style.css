@@ -1,0 +1,120 @@
+/*
+==========
+variables
+==========
+*/
+:root {
+  --clr-primary-lightBlue: hsl(202, 27%, 80%);
+  --clr-primary-darkBlue: rgb(11, 72, 107);
+  --clr-primary-greyBlack: rgb(37, 35, 35);
+  --clr-primary-dirtyWhite: rgb(233, 231, 231);
+  --ff-primary: "Abril Fatface", cursive;
+  --ff-secondary: "Bebas Neue", cursive;
+  --fs-h1: 2.25rem;
+  --fs-text: 1.15rem;
+  --fs-h2: 1.5rem;
+  --fs-btn: 1.5rem;
+  --padding-container: 3em;
+  --padding-hidden: 1.15em 0 0;
+  --padding-section: 1em 1.5em;
+  --padding-h1: 0.5em;
+  --padding-h2: 0.5em 0 0;
+  --padding-btn: 1em;
+  --padding-text: 1.5em 0;
+  --mrg-h1-bottom: 1.5em;
+}
+
+/*
+==========
+general styles
+==========
+*/
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  padding: var(--padding-container);
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+body {
+  background-color: var(--clr-primary-lightBlue);
+  font-family: var(--ff-secondary);
+}
+
+h1,
+h2 {
+  font-family: var(--ff-primary);
+  color: var(--clr-primary-darkBlue);
+}
+
+h1 {
+  margin-bottom: var(--mrg-h1-bottom);
+  padding: var(--padding-h1);
+  font-size: var(--fs-h1);
+}
+
+h2 {
+  padding: var(--padding-h2);
+  color: var(--clr-primary-greyBlack);
+  font-size: var(--fs-h2);
+}
+
+p {
+  padding: var(--padding-text);
+  color: var(--clr-primary-darkBlue);
+  font-size: var(--fs-text);
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  font-size: var(--fs-btn);
+  color: var(--clr-primary-darkBlue);
+}
+
+section {
+  display: flex;
+  flex-flow: column;
+  min-width: 90%;
+  padding: var(--padding-section);
+  background-color: var(--clr-primary-dirtyWhite);
+  border-radius: 10px;
+}
+
+/*
+==========
+question sections styling
+==========
+*/
+
+.question__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+/*
+==========
+hidden element styling
+==========
+*/
+/* toggle amwser section */
+.answer__visible {
+  display: block;
+  padding: var(--padding-hidden);
+  transition: all 0.3s linear;
+}
+
+.hidden__anwser {
+  display: none;
+  transition: all 0.3s linear;
+}
