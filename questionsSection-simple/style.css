@@ -20,7 +20,7 @@ variables
   --padding-h1: 0.5em;
   --padding-h2: 0.5em 0 0;
   --padding-btn: 1em;
-  --padding-text: 1.5em 0;
+  --padding-text: 1.5em 0 0.5em;
   --mrg-h1-bottom: 1.5em;
 }
 
@@ -84,10 +84,18 @@ button {
 section {
   display: flex;
   flex-flow: column;
-  min-width: 90%;
+  width: 90%;
   padding: var(--padding-section);
   background-color: var(--clr-primary-dirtyWhite);
   border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: var(--clr-primary-greyBlack);
 }
 
 /*
@@ -107,14 +115,18 @@ question sections styling
 hidden element styling
 ==========
 */
-/* toggle amwser section */
-.answer__visible {
-  display: block;
+
+.hidden {
+  display: none;
+  height: 0;
+  overflow: hidden;
   padding: var(--padding-hidden);
   transition: all 0.3s linear;
 }
 
-.hidden__anwser {
-  display: none;
+/* toggle answer section */
+.visible {
+  display: block;
+  height: 100%;
   transition: all 0.3s linear;
 }
