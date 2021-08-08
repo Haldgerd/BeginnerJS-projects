@@ -4,7 +4,7 @@ const modalClose = document.querySelector(".modal__close");
 
 
 openModalBtn.addEventListener("click", () => {
-  modalOverlay.classList.toggle("modal__overlay--visible");
+  modalOverlay.classList.add("modal__overlay--visible");
 });
 
 modalClose.addEventListener("click", () => {
