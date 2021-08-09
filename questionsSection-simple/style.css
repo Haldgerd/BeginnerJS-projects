@@ -17,7 +17,7 @@ variables
   --padding-container: 3em;
   --padding-hidden: 1.15em 0 0;
   --padding-section: 1em 1.5em;
-  --padding-h1: 0.5em;
+  --padding-h1: 0.5em 0 0;
   --padding-h2: 0.5em 0 0;
   --padding-btn: 1em;
   --padding-text: 1.5em 0 0.5em;
@@ -79,6 +79,12 @@ button {
   background-color: transparent;
   font-size: var(--fs-btn);
   color: var(--clr-primary-darkBlue);
+  transition: all 0.3s linear;
+}
+
+button:hover {
+  transform: rotate(90deg);
+  transition: all 0.3s linear;
 }
 
 section {
@@ -90,6 +96,10 @@ section {
   border-radius: 10px;
   position: relative;
   overflow: hidden;
+}
+
+section + section {
+  margin-top: 2.25em;
 }
 
 hr {
