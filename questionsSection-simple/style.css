@@ -131,12 +131,10 @@ hidden element styling
   height: 0;
   overflow: hidden;
   padding: var(--padding-hidden);
-  transition: all 0.3s linear;
 }
 
 /* toggle answer section */
 .visible {
   display: block;
   height: 100%;
-  transition: all 0.3s linear;
 }
