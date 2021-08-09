@@ -1,0 +1,50 @@
+/*
+==========
+variables
+==========
+*/
+:root {
+  --clr-primary-dirtyYellow: rgba(224, 197, 42, 0.685);
+  --clr-primary-duskBlack: rgb(39, 33, 33);
+  --ff-sitewide: "VT323", monospace;
+  --fs-primary: 2.25rem;
+  --fs-secondary: 1.25rem;
+  --padding-header: 1em;
+  --padding-text: 0.5em;
+  --padding-btn: 0.75em;
+}
+
+/*
+============
+general styles
+============
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+}
+
+video {
+  width: 100vw;
+  height: 100vh;
+}
+
+h1 {
+  font-family: var(--ff-sitewide);
+  color: var(--clr-primary-duskBlack);
+  font-size: var(--fs-primary);
+}
+
+button {
+  border: none;
+  font-family: var(--ff-sitewide);
+  font-size: var(--fs-secondary);
+}
