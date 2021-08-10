@@ -29,20 +29,29 @@
   </head>
   <body>
     <!--video background-->
-    <video muted loop class="video__container">
+    <video muted autoplay loop class="video__container">
       <source src="./videos/GUNSHIP.mp4" type="video/mp4" />
     </video>
 
     <!-- Optional: some overlay text to describe the video -->
     <div class="overlay__container">
+      <!--mute/unmute icon-->
+      <button class="audio__button">
+        <i class="fas fa-volume-mute"></i>
+      </button>
       <div class="title__container">
         <h1 class="overlay__title">When you grow old your heart dies</h1>
       </div>
 
       <!-- Use a button to pause/play the video with JavaScript -->
       <div class="btn__container">
-        <button class="overlay__btn--pause">Pause</button>
-        <button class="overlay__btn--play">Play</button>
+        <div class="btns">
+          <div class="icon__container">
+            <i class="fas fa-gamepad"></i>
+          </div>
+          <button class="overlay__btn--pause">Pause</button>
+          <button class="overlay__btn--play">Play</button>
+        </div>
       </div>
     </div>
   </body>

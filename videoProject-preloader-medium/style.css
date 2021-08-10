@@ -4,16 +4,19 @@ variables
 ==========
 */
 :root {
-  --clr-primary-dirtyYellow: rgba(255, 217, 1, 0.329);
-  --clr-primary-white: rgba(248, 244, 15, 0.801);
+  --clr-primary-dirtyYellow: hsla(51, 100%, 50%, 0.329);
+  --clr-primary-white: hsla(59, 94%, 52%, 0.801);
+  --clr-primary-pureYelllow: hsl(64, 100%, 50%);
   --clr-primary-duskBlack: rgb(39, 33, 33);
   --ff-sitewide: "VT323", monospace;
-  --fs-primary: 3.25rem;
-  --fs-secondary: 1.25rem;
+  --fs-primary: 4rem;
+  --fs-secondary: clamp(1rem, 1.75rem, 2rem);
+  --fs-icon: 3rem;
+  --margin-container: 0 1.5em;
   --padding-body: 0.5em;
   --padding-header: 1em;
   --padding-text: 0.5em;
-  --padding-btn: 0.75em;
+  --padding-btn: 0.5em;
 }
 
 /*
@@ -56,6 +59,26 @@ button {
   font-size: var(--fs-secondary);
   padding: var(--padding-btn);
   background-color: transparent;
+  transition: all 0.3s linear;
+}
+
+button:hover {
+  transform: scale(1.2);
+  transition: all 0.3s linear;
+}
+
+/*
+==========
+audio icon
+===========
+*/
+.audio__button {
+  position: fixed;
+  top: 0.5em;
+  left: 0.5em;
+  font-size: var(--fs-icon);
+  background-color: transparent;
+  color: var(--clr-primary-pureYelllow);
 }
 
 /*
@@ -85,8 +108,9 @@ h1-styles
 .title__container {
   text-align: center;
   background-color: var(--clr-primary-white);
-  width: 45ch;
+  width: minmax(30ch, 60%);
   padding: var(--padding-header);
+  margin: var(--margin-container);
 }
 
 /*
@@ -95,9 +119,43 @@ buttons container styling
 ==========
 */
 .btn__container {
+  width: minmax(initial, 50%);
   position: fixed;
   bottom: 2em;
   left: 2em;
   background-color: var(--clr-primary-white);
   align-self: flex-start;
+}
+
+/* 
+============
+btn icon -animated
+============
+*/
+.btns {
+  position: relative;
+}
+
+.icon__container {
+  font-size: var(--fs-icon);
+  background-color: var(--clr-primary-pureYelllow);
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.icon--move {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  transition: 0.3s;
 }
