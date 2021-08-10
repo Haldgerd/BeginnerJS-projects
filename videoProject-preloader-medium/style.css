@@ -4,11 +4,13 @@ variables
 ==========
 */
 :root {
-  --clr-primary-dirtyYellow: rgba(224, 197, 42, 0.685);
+  --clr-primary-dirtyYellow: rgba(255, 217, 1, 0.329);
+  --clr-primary-white: rgba(248, 244, 15, 0.801);
   --clr-primary-duskBlack: rgb(39, 33, 33);
   --ff-sitewide: "VT323", monospace;
-  --fs-primary: 2.25rem;
+  --fs-primary: 3.25rem;
   --fs-secondary: 1.25rem;
+  --padding-body: 0.5em;
   --padding-header: 1em;
   --padding-text: 0.5em;
   --padding-btn: 0.75em;
@@ -32,9 +34,14 @@ body {
   overflow: hidden;
 }
 
-video {
-  width: 100vw;
-  height: 100vh;
+/* Style the video: 100% width and height to cover the entire window */
+video,
+source {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
 }
 
 h1 {
@@ -47,4 +54,50 @@ button {
   border: none;
   font-family: var(--ff-sitewide);
   font-size: var(--fs-secondary);
+  padding: var(--padding-btn);
+  background-color: transparent;
+}
+
+/*
+==========
+overlay styles
+==========
+*/
+
+.overlay__container {
+  position: relative;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: var(--clr-primary-dirtyYellow);
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*
+==========
+h1-styles
+==========
+*/
+.title__container {
+  text-align: center;
+  background-color: var(--clr-primary-white);
+  width: 45ch;
+  padding: var(--padding-header);
+}
+
+/*
+=========
+buttons container styling
+==========
+*/
+.btn__container {
+  position: fixed;
+  bottom: 2em;
+  left: 2em;
+  background-color: var(--clr-primary-white);
+  align-self: flex-start;
 }
