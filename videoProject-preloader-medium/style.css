@@ -4,8 +4,8 @@ variables
 ==========
 */
 :root {
-  --clr-primary-dirtyYellow: hsla(51, 100%, 50%, 0.329);
-  --clr-primary-white: hsla(59, 94%, 52%, 0.801);
+  --clr-primary-dirtyYellow: hsla(51, 100%, 50%, 0.267);
+  --clr-primary-brightYellow: hsla(59, 94%, 52%, 0.671);
   --clr-primary-pureYelllow: hsl(64, 100%, 50%);
   --clr-primary-duskBlack: rgb(39, 33, 33);
   --ff-sitewide: "VT323", monospace;
@@ -67,6 +67,20 @@ button:hover {
   transition: all 0.3s linear;
 }
 
+/* 
+==========
+preloader
+==========
+*/
+/* .giphy__embed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100vw;
+  min-height: 100vh;
+} */
+
 /*
 ==========
 audio icon
@@ -107,7 +121,7 @@ h1-styles
 */
 .title__container {
   text-align: center;
-  background-color: var(--clr-primary-white);
+  background-color: var(--clr-primary-brightYellow);
   width: minmax(30ch, 60%);
   padding: var(--padding-header);
   margin: var(--margin-container);
@@ -123,7 +137,7 @@ buttons container styling
   position: fixed;
   bottom: 2em;
   left: 2em;
-  background-color: var(--clr-primary-white);
+  background-color: var(--clr-primary-brightYellow);
   align-self: flex-start;
 }
 
@@ -136,6 +150,7 @@ btn icon -animated
   position: relative;
 }
 
+/* smooth transition of icon from left to right and back - is there an alternative to achieve this TBD*/
 .icon__container {
   font-size: var(--fs-icon);
   background-color: var(--clr-primary-pureYelllow);
@@ -149,13 +164,15 @@ btn icon -animated
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: translateX(0);
   transition: 0.3s;
 }
 
 .icon--move {
   top: 0;
-  left: 0;
+  right: 0;
   height: 100%;
   width: 50%;
+  transform: translateX(-100%);
   transition: 0.3s;
 }
