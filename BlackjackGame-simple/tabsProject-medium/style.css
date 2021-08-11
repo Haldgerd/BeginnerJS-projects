@@ -1,0 +1,120 @@
+/* font face declaration */
+@font-face {
+  font-family: "edge_of_the_galaxyregular";
+  src: url("./fonts/edgeofthegalaxyregular-ovea6-webfont.woff2") format("woff2"),
+    url("./fonts/edgeofthegalaxyregular-ovea6-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*
+===============
+variables
+==============
+*/
+:root {
+  --clr-primary-neonPink: hsla(345, 84%, 47%, 0.836);
+  --clr-primary-purple: rgb(65, 6, 65);
+  --clr-primary-teal: hsla(180, 85%, 38%, 0.836);
+  --clr-primary-yellow: hsl(51, 100%, 50%);
+  --clr-primary-duskBlack: rgb(39, 33, 33);
+  --ff-primary: "edge_of_the_galaxyregular";
+  --ff-secondary: "Roboto Mono", monospace;
+  --fs-h1: 5rem;
+  --fs-h2: 2rem;
+  --fs-btn: 1.35rem;
+  --fs-general: 1.15rem;
+  --padding-body: 2em 4em;
+  --padding-header: 1em 0.5em 4em;
+  --padding-h1: 0.5em 0;
+  --padding-h2: 1em 0.5em;
+  --padding-btns: 1em;
+  --padding-btn-container: 2em 0 0;
+}
+
+/*
+===========
+general styles
+===========
+*/
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+  padding: var(--padding-body);
+  background-color: var(--clr-primary-teal);
+  color: var(--clr-primary-duskBlack);
+  font-family: var(--ff-secondary);
+  font-size: var(--fs-general);
+}
+
+body,
+section {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+header {
+  text-align: center;
+  padding: var(--padding-header);
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: var(--fs-h1);
+  font-family: var(--ff-primary);
+  letter-spacing: 0.2em;
+  text-decoration: underline var(--clr-primary-neonPink) 5px;
+  padding: var(--padding-h1);
+}
+
+p {
+  max-width: 55ch;
+  margin: 0 auto;
+}
+
+img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+button {
+  border: 3px solid black;
+  background-color: transparent;
+  flex: 1;
+  padding: var(--padding-btns);
+  font-size: var(--fs-btn);
+  font-family: var(--ff-primary);
+  letter-spacing: 0.2em;
+}
+
+/*
+===============
+section styles
+=============
+*/
+
+.content__tabs {
+  width: 100%;
+}
+
+/*
+===============
+buttons section styles
+=============
+*/
+.content__btns {
+  background-color: var(--clr-primary-yellow);
+  display: flex;
+  margin: var(--padding-btn-container);
+}

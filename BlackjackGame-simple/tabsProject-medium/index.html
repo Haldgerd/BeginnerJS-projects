@@ -11,6 +11,12 @@
     />
 
     <!--google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap"
+      rel="stylesheet"
+    />
 
     <!--styles-->
     <link rel="stylesheet" href="style.css" />
@@ -21,27 +27,47 @@
     <title>Tabs project</title>
   </head>
   <body>
+    <!--header -->
     <header class="header__container">
-      <h1 class="header__title"></h1>
-      <p class="header__content"></p>
+      <h1 class="header__title">tokyo-neon2022</h1>
+      <p class="header__content">
+        Japanese cyberpunk neon city sushi ramen teriyaki city lights bowl
+        kimono cyberpunk colors
+      </p>
     </header>
     <section class="content__container">
+      <!--image left side of screen-->
       <div class="content__img">
-        <img src="" alt="" class="image" />
+        <img
+          src="./Images/tokyo-cyberpunk.jpeg"
+          alt="japanese artist convertes photography of tokyo into cyberpunk art. Bright colors, people with umbrellas walking on pedestrians, flashing commercials on buildings."
+          class="image"
+        />
       </div>
+      <!--articles and corressponding buttons right side of screen-->
       <div class="content__tabs">
-        <article class="content__article">
-          <button class="btn--display"></button>
-          <p class="article__description"></p>
-        </article>
-        <article class="content__article">
-          <button class="btn--display"></button>
-          <p class="article__description"></p>
-        </article>
-        <article class="content__article">
-          <button class="btn--display"></button>
-          <p class="article__description"></p>
-        </article>
+        <!--buttons for toggling tabs-->
+        <div class="content__btns">
+          <button class="btn--display history__btn">history</button>
+          <button class="btn--display vision__btn">vision</button>
+          <button class="btn--display goals__btn">goals</button>
+        </div>
+
+        <div class="content__articles">
+          <!--articles-->
+          <article class="content__article">
+            <h2 class="article__title"></h2>
+            <p class="article__description"></p>
+          </article>
+          <!-- <article class="content__article">
+            <h2 class="article__title"></h2>
+            <p class="article__description"></p>
+          </article>
+          <article class="content__article">
+            <h2 class="article__title"></h2>
+            <p class="article__description"></p>
+          </article> -->
+        </div>
       </div>
     </section>
   </body>
