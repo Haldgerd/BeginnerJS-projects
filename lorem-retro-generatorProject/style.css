@@ -1,0 +1,41 @@
+/* font face */
+
+@font-face {
+  font-family: "barcaderegular";
+  src: url("./fonts/barcade-r4lm-webfont.woff2") format("woff2"),
+    url("./fonts/barcade-r4lm-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*
+==============
+variables
+==============
+*/
+:root {
+}
+
+/*
+==============
+general
+==============
+*/
+
+/*
+==============
+header section styles
+==============
+*/
+
+/*
+==============
+design stripes section styles
+==============
+*/
+
+/*
+==============
+lorem generator section styles
+==============
+*/
