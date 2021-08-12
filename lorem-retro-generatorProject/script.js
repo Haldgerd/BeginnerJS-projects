@@ -28,10 +28,11 @@ btn.addEventListener("click", () => {
     while (num < inputValue) {
       //console.log(num);
       let randomNumber = Math.floor(Math.random() * text.length);
-      paragraphs += text[randomNumber];  // works but doesn't add breaks between paragraphs TBD!
+      paragraphs += text[randomNumber] + "<br/><br/>";  // works but doesn't add breaks between paragraphs TBD!
       num++;
     }
-    loremDisplay.textContent = paragraphs;
+    console.log(paragraphs);
+    loremDisplay.innerHTML = paragraphs;
   }
 });
 
