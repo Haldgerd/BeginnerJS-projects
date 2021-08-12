@@ -4,40 +4,66 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--font awesome link-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.6.1/css/all.css"
+    />
+
+    <!--google fonts-->
+
+    <!--styles-->
+    <link rel="stylesheet" href="style.css" />
+
+    <!--javascript-->
+    <script src="script.js" defer></script>
+
     <title>Document</title>
   </head>
+
   <body>
-    <header class="header__container">
-      <h1 class="header__title">RETRO LOREM GENERATOR</h1>
-      <p class="header__description">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-      </p>
-    </header>
     <main class="main__container">
+      <div class="content__container">
+        <header class="header__container">
+          <h1 class="header__title">RETRO LOREM GENERATOR</h1>
+          <p class="header__description">
+            >_ Don't worry they'll be back. Meanwhile be cool, use retro lorem.
+          </p>
+        </header>
+
+        <section class="lorem__container">
+          <label for="number" class="lorem__word__counter" id="lorem__count"
+            >Your retro words:</label
+          >
+          <input id="number" type="number" min="1" max="20" /><button
+            class="lorem__display_btn"
+          >
+            generate
+          </button>
+          <p class="lorem__display"></p>
+        </section>
+      </div>
+
       <div class="main__bg--stripes">
-        <div class="stripe"></div>
-        <div class="stripe"></div>
-        <div class="stripe"></div>
-        <div class="image">
+        <div class="stripe stripe--red"></div>
+        <div class="stripe stripe--blue"></div>
+        <div class="stripe stripe--yellow"></div>
+        <div class="stripe stripe--img">
+          <img
+            src="./images/vhs-bg.jpg"
+            alt="red, blue and green stripes on carboard, with letters VHS added beside them."
+            srcset=""
+          />
+        </div>
+        <!-- <div class="image">
           <img
             src="./images/retro-bg.jpg"
             alt="a collection of VHS cassettes from the 80's depicting different movie blockbusters from that era."
             srcset=""
           />
-        </div>
+        </div> -->
       </div>
-
-      <section class="lorem__container">
-        <p class="lorem__display"></p>
-        <label
-          for="number"
-          class="lorem__word__counter"
-          id="lorem__count"
-        ></label>
-        <input id="number" type="number" /><button
-          class="lorem__display_btn"
-        ></button>
-      </section>
     </main>
   </body>
 </html>

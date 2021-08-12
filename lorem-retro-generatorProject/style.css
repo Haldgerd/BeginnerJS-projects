@@ -14,6 +14,22 @@ variables
 ==============
 */
 :root {
+  --clr-primary-retroGreen: rgb(12, 68, 12);
+  --clr-primary-retroBlue: rgb(10, 28, 192);
+  --clr-primary-retroRed: rgb(131, 11, 11);
+  --clr-primary-retroYellow: rgb(241, 218, 6);
+  --clr-primary-white: white;
+  --clr-primary-duskBlack: rgb(31, 27, 27);
+  --ff-primary: "barcaderegular";
+  --ff-secondary: monospace;
+  --fs-h1: 3rem;
+  --fs-btn: 1.5rem;
+  --fs-text: 1.2rem;
+  --fs-input: 1.5rem;
+  --padding-h1: 0.5em 0;
+  --padding-btn: 0.2em;
+  --padding-container: 2em 0 2em 1.5em;
+  --transition-btn: 0.3s linear;
 }
 
 /*
@@ -21,6 +37,73 @@ variables
 general
 ==============
 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: var(--fs-text);
+  font-family: var(--ff-secondary);
+}
+
+h1,
+button {
+  text-transform: uppercase;
+  font-family: var(--ff-primary);
+  color: var(--clr-primary-retroGreen);
+}
+
+h1 {
+  font-size: var(--fs-h1);
+  padding: var(--padding-h1);
+}
+
+main {
+  display: flex;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+p {
+  margin-top: var(--margin-top);
+  width: 55ch;
+}
+
+button {
+  border: none;
+  width: 30%;
+  background-color: var(--clr-primary-retroBlue);
+  padding: var(--padding-btn);
+  color: var(--clr-primary-white);
+  font-size: var(--fs-btn);
+  margin-left: 2.5em;
+  border-radius: 10px;
+  transition: var(--transition-btn);
+}
+
+button:hover {
+  background-color: var(--clr-primary-retroRed);
+  transition: var(--transition-btn);
+}
+
+.btn--active {
+  background-color: var(--clr-primary-retroRed);
+}
+
+input {
+  border: none;
+  width: 10%;
+  margin-left: 1em;
+  font-size: var(--fs-input);
+}
+
+img {
+  height: 100vh;
+}
 
 /*
 ==============
@@ -28,14 +111,52 @@ header section styles
 ==============
 */
 
+.content__container {
+  width: 50%;
+  padding: var(--padding-container);
+}
+
 /*
 ==============
 design stripes section styles
 ==============
 */
+.main__bg--stripes {
+  background-color: var(--clr-primary-retroGreen);
+  display: flex;
+  justify-content: flex-end;
+  /* flex-flow: row-reverse; */
+  width: 50%;
+  min-height: 100vh;
+}
 
+.stripe {
+  width: 10%;
+  min-height: inherit;
+  height: inherit;
+}
+
+.stripe--red {
+  width: 20%;
+  background-color: var(--clr-primary-retroRed);
+}
+
+.stripe--blue {
+  background-color: var(--clr-primary-retroBlue);
+}
+
+.stripe--yellow {
+  background-color: var(--clr-primary-retroYellow);
+}
+
+.stripe--img {
+  width: 20%;
+}
 /*
 ==============
 lorem generator section styles
 ==============
 */
+.lorem__container {
+  margin-top: 4em;
+}
