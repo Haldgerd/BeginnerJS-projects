@@ -28,7 +28,7 @@ variables
   --fs-input: 1.5rem;
   --padding-h1: 0.5em 0;
   --padding-btn: 0.2em;
-  --padding-container: 2em 0 2em 1.5em;
+  --padding-container: 2em 1.5em;
   --transition-btn: 0.3s linear;
 }
 
@@ -65,12 +65,11 @@ h1 {
 main {
   display: flex;
   min-height: 100vh;
-  overflow: hidden;
 }
 
 p {
   margin-top: var(--margin-top);
-  width: 55ch;
+  width: minmax(20ch, 55ch);
 }
 
 button {
@@ -159,4 +158,8 @@ lorem generator section styles
 */
 .lorem__container {
   margin-top: 4em;
+}
+
+.lorem__display {
+  margin-top: 3em;
 }
