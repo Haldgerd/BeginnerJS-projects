@@ -1,0 +1,142 @@
+/*
+==========
+variables
+===========
+*/
+
+:root {
+  --clr-primary-lightYellow: rgb(250, 235, 104);
+  --clr-primary-duskBlack: rgb(32, 26, 26);
+  --clr-primary-magenta: rgb(141, 6, 141);
+  --ff-primary: "Archivo Black", sans-serif;
+  --ff-secondary: "Montserrat", sans-serif;
+  --padding-section: 2em;
+  --padding-btn: 0.5em;
+  --padding-body: 5em;
+  --padding-menu-description: 0.5em;
+  --fs-primary: 4rem;
+  --fs-secondary: 2rem;
+  --fs-text: 1.2rem;
+}
+
+/*
+==========
+general
+===========
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--clr-primary-lightYellow);
+  padding: var(--padding-body);
+  font-family: var(--ff-secondary);
+  font-size: var(--fs-text);
+}
+
+img {
+  width: 200px;
+  height: 300px;
+}
+
+section {
+  display: flex;
+  width: auto;
+  padding: var(--padding-section);
+}
+
+section + section {
+  margin-top: 4em;
+}
+
+h1,
+h2 {
+  font-family: var(--ff-primary);
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: var(--fs-primary);
+}
+
+hr {
+  height: 5px;
+  width: 20%;
+  border: none;
+  background-color: var(--clr-primary-magenta);
+  font-size: var(--fs-secondary);
+  margin: 0 auto;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  display: inline;
+  text-transform: capitalize;
+  text-align: left;
+}
+
+button {
+  width: 10%;
+  border: 3px solid black;
+  background-color: transparent;
+  padding: var(--padding-btn);
+  font-family: var(--ff-secondary);
+  transition: 0.3s linear;
+}
+
+button:hover {
+  background-color: var(--clr-primary-magenta);
+  transition: 0.3s linear;
+  color: white;
+}
+
+header {
+  margin-bottom: 4em;
+  text-align: center;
+}
+
+/*
+==========
+horizontal rulesets styles
+===========
+*/
+
+.title__hr {
+  width: auto;
+  height: 2px;
+}
+
+/*
+==========
+menu related styles
+===========
+*/
+
+.menu__container {
+  display: flex;
+  flex-flow: column;
+}
+
+.menu__description {
+  padding: var(--padding-menu-description);
+}
+
+@media screen and (min-width: 1200px) {
+  section {
+    width: 50%;
+  }
+
+  section + section {
+    margin-top: 0;
+  }
+
+  .menu__container {
+    flex-flow: row wrap;
+  }
+}
