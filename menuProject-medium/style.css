@@ -13,8 +13,8 @@ variables
   --padding-section: 2em;
   --padding-btn: 0.5em;
   --padding-body: 5em;
-  --padding-menu-description: 0.5em;
-  --fs-primary: 4rem;
+  --padding-menu-description: 0.5em 2em;
+  --fs-primary: 5rem;
   --fs-secondary: 2rem;
   --fs-text: 1.2rem;
 }
@@ -43,6 +43,7 @@ body {
 img {
   width: 200px;
   height: 300px;
+  border: 15px solid var(--clr-primary-magenta);
 }
 
 section {
@@ -66,8 +67,8 @@ h1 {
 }
 
 hr {
-  height: 5px;
-  width: 20%;
+  height: 10px;
+  width: 30%;
   border: none;
   background-color: var(--clr-primary-magenta);
   font-size: var(--fs-secondary);
@@ -101,6 +102,10 @@ header {
   text-align: center;
 }
 
+span {
+  margin-right: 0;
+}
+
 /*
 ==========
 horizontal rulesets styles
@@ -125,6 +130,11 @@ menu related styles
 
 .menu__description {
   padding: var(--padding-menu-description);
+}
+
+.menu__header {
+  display: flex;
+  justify-content: space-between;
 }
 
 @media screen and (min-width: 1200px) {
