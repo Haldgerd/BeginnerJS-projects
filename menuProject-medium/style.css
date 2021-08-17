@@ -17,6 +17,7 @@ variables
   --fs-primary: 5rem;
   --fs-secondary: 2rem;
   --fs-text: 1.2rem;
+  --fs-btn: 1.3rem;
 }
 
 /*
@@ -48,7 +49,6 @@ img {
 
 section {
   display: flex;
-  width: auto;
   padding: var(--padding-section);
 }
 
@@ -89,6 +89,7 @@ button {
   padding: var(--padding-btn);
   font-family: var(--ff-secondary);
   transition: 0.3s linear;
+  font-size: var(--fs-btn);
 }
 
 button:hover {
@@ -137,7 +138,7 @@ menu related styles
   justify-content: space-between;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1400px) {
   section {
     width: 50%;
   }
