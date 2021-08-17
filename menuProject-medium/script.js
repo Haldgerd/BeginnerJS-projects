@@ -82,7 +82,9 @@ const items = [
 ];
 
 const menuSection = document.querySelector(".menu__container");
-const buttons = document.querySelectorAll(".menu__btn");
+const btnContainer = document.querySelector(".btn__container");
+
+
 
 // display items as html code - inject into html.
 function displayMenuItems(items) {
@@ -107,29 +109,49 @@ function displayMenuItems(items) {
 }
 
 
+//dynamic buttons display and functionallity of filtering items in menu.
+function buttonsDisplay (items) {
+  // create an array of unique categories for dynamic btn display. 
+  const categories = [...new Set(items.map(item => item.category))]; //using ES6 set function and spread operator!  Check blogs: https://learnersbucket.com/examples/array/javascript-get-unique-items-from-array/
+  categories.unshift("all");
+  // console.log(categories);
 
-// load items
+  const categoryBtns = categories.map(category => {
+    return ` <button class="header__btn menu__btn" data-id=${category}>${category}</button>`
+  }).join("");
+
+  // console.log(categoryBtns);
+  btnContainer.innerHTML = categoryBtns;
+
+  const buttons = document.querySelectorAll(".menu__btn");
+
+  // filter items -buttons
+  buttons.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      const filterBtn = e.currentTarget.dataset.id; //dataset needs data-id on your html element for it to work! 
+      const filteredMenu = items.filter(item => {
+        if (item.category === filterBtn) {
+          return item; //creates an array of values which evaluate to true.
+  
+          // console.log(item.title);
+        }
+      });
+      if (filterBtn === "all") {
+        displayMenuItems(items);
+      } else {
+        displayMenuItems(filteredMenu);
+      }
+      // console.log(filteredMenu);
+    });
+  });
+}
+
+
+// load items (main functionallity)
 window.addEventListener("DOMContentLoaded", () => {
   displayMenuItems(items);
+  buttonsDisplay(items);
 });
 
 
-// filter items
-buttons.forEach(btn => {
-  btn.addEventListener("click", (e) => {
-    const filterBtn = e.currentTarget.dataset.id; //dataset needs data-id on your html element for it to work! 
-    const filteredMenu = items.filter(item => {
-      if (item.category === filterBtn) {
-        return item; //creates an array of values which evaluate to true.
 
-        // console.log(item.title);
-      }
-    });
-    if (filterBtn === "all") {
-      displayMenuItems(items);
-    } else {
-      displayMenuItems(filteredMenu);
-    }
-    // console.log(filteredMenu);
-  });
-});
