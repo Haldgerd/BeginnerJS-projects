@@ -84,6 +84,7 @@ const items = [
 const menuSection = document.querySelector(".menu__container");
 const buttons = document.querySelectorAll(".menu__btn");
 
+// display items as html code - inject into html.
 function displayMenuItems(items) {
   let displayContent = items.map(item => {
     // console.log(item);
@@ -106,7 +107,7 @@ function displayMenuItems(items) {
 }
 
 
-// console.log(document.querySelector(".header__container"));
+
 // load items
 window.addEventListener("DOMContentLoaded", () => {
   displayMenuItems(items);
@@ -114,13 +115,21 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 // filter items
-
 buttons.forEach(btn => {
   btn.addEventListener("click", (e) => {
     const filterBtn = e.currentTarget.dataset.id; //dataset needs data-id on your html element for it to work! 
     const filteredMenu = items.filter(item => {
-      return item;
+      if (item.category === filterBtn) {
+        return item; //creates an array of values which evaluate to true.
+
+        // console.log(item.title);
+      }
     });
-    console.log(filteredMenu);
+    if (filterBtn === "all") {
+      displayMenuItems(items);
+    } else {
+      displayMenuItems(filteredMenu);
+    }
+    // console.log(filteredMenu);
   });
 });
