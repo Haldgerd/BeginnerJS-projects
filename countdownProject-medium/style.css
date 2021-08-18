@@ -1,0 +1,105 @@
+/*
+========
+variables
+========
+*/
+:root {
+  --clr-primary-green: hsl(120, 28%, 42%);
+  --clr-primary-dullBlack: hsl(0, 6%, 23%);
+  --clr-primary-lightPeach: hsl(19, 68%, 85%);
+  --ff-primary: serif;
+  --ff-secondary: monospace;
+  --fs-h1: 2.2rem;
+  --fs-h2: 1.2rem;
+  --fs-countdown: 1.2rem;
+  --fs-p: 1rem;
+  --padding-body: 8em 4em;
+  --padding-h1: 0.5em 0;
+  --padding-countdownBox: 0.5em;
+}
+
+/*
+========
+general styles
+========
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: var(--padding-body);
+  text-align: left;
+  color: var(--clr-primary-dullBlack);
+  background-color: var(--clr-primary-lightPeach);
+  font-family: var(--ff-secondary);
+  font-size: var(--fs-p);
+}
+
+h1 {
+  text-transform: uppercase;
+  color: var(--clr-primary-green);
+  font-size: var(--fs-h1);
+  padding: var(--padding-h1);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+  margin-bottom: 1em;
+}
+
+main {
+  display: flex;
+  flex-flow: column;
+}
+
+/*
+========
+header section styles
+========
+*/
+.header__container {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  margin-top: 2em;
+}
+
+.main__description {
+  text-align: left;
+}
+
+/*
+========
+countdown section styles
+========
+*/
+
+.countdown__content {
+  display: flex;
+  margin-top: 1.75em;
+  text-align: center;
+}
+
+.countdown__deadline {
+  width: 100px;
+  height: 100px;
+  background-color: var(--clr-primary-green);
+  text-transform: uppercase;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+  padding: var(--padding-countdownBox);
+}
+
+.countdown__deadline + .countdown__deadline {
+  margin-left: 1.5em;
+}
+
+/* media query */
+@media screen and (min-width: 1200px) {
+}
