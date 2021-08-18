@@ -7,11 +7,12 @@ variables
   --clr-primary-green: hsl(120, 28%, 42%);
   --clr-primary-dullBlack: hsl(0, 6%, 23%);
   --clr-primary-lightPeach: hsl(19, 68%, 85%);
-  --ff-primary: serif;
-  --ff-secondary: monospace;
-  --fs-h1: 2.2rem;
-  --fs-h2: 1.2rem;
-  --fs-countdown: 1.2rem;
+  --clr-primary-softBiege: hsl(34, 53%, 92%);
+  --ff-primary: "Vidaloka", serif;
+  --ff-secondary: "Raleway", sans-serif;
+  --fs-h1: 2.5rem;
+  --fs-h2: 1.25rem;
+  --fs-countdown: 3rem;
   --fs-p: 1rem;
   --padding-body: 8em 4em;
   --padding-h1: 0.5em 0;
@@ -40,6 +41,12 @@ body {
   font-size: var(--fs-p);
 }
 
+h1,
+h2 {
+  font-family: var(--ff-primary);
+  letter-spacing: 1px;
+}
+
 h1 {
   text-transform: uppercase;
   color: var(--clr-primary-green);
@@ -55,6 +62,13 @@ h2 {
 main {
   display: flex;
   flex-flow: column;
+  background-color: var(--clr-primary-softBiege);
+  border: 50px solid var(--clr-primary-softBiege);
+  box-shadow: 1px 0px 50px 0 var(--clr-primary-dullBlack);
+}
+
+p {
+  line-height: 1.5;
 }
 
 /*
@@ -78,10 +92,9 @@ header section styles
 countdown section styles
 ========
 */
-
 .countdown__content {
   display: flex;
-  margin-top: 1.75em;
+  margin-top: 3em;
   text-align: center;
 }
 
@@ -92,14 +105,45 @@ countdown section styles
   text-transform: uppercase;
   display: flex;
   flex-flow: column;
-  justify-content: flex-end;
+  justify-content: center;
   padding: var(--padding-countdownBox);
+  font-family: var(--ff-primary);
 }
 
 .countdown__deadline + .countdown__deadline {
   margin-left: 1.5em;
 }
 
+.data {
+  font-size: var(--fs-countdown);
+  background-color: var(--clr-primary-softBiege);
+}
+
+.countdown__info {
+  color: var(--clr-primary-softBiege);
+  font-weight: bold;
+}
+
 /* media query */
 @media screen and (min-width: 1200px) {
+  main {
+    flex-flow: row;
+  }
+
+  img,
+  .tbd__container {
+    width: 50%;
+  }
+
+  h1 {
+    padding-top: 0;
+  }
+
+  .tbd__container {
+    margin-left: 5em;
+  }
+
+  .header__container {
+    margin-top: 0;
+  }
 }
