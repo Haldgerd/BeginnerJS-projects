@@ -6,6 +6,7 @@ variables
 :root {
   --clr-primary-green: hsl(120, 28%, 42%);
   --clr-primary-dullBlack: hsl(0, 6%, 23%);
+  --clr-primary-lightBlack: hsl(0, 4%, 33%);
   --clr-primary-lightPeach: hsl(19, 68%, 85%);
   --clr-primary-softBiege: hsl(34, 53%, 92%);
   --ff-primary: "Vidaloka", serif;
@@ -64,7 +65,7 @@ main {
   flex-flow: column;
   background-color: var(--clr-primary-softBiege);
   border: 50px solid var(--clr-primary-softBiege);
-  box-shadow: 1px 0px 50px 0 var(--clr-primary-dullBlack);
+  box-shadow: 10px 20px 40px 0 var(--clr-primary-lightBlack);
 }
 
 p {
