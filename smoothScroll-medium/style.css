@@ -137,7 +137,7 @@ nav {
 }
 
 section + section {
-  height: 60vh;
+  height: 70vh;
 }
 
 section:nth-child(even) {
@@ -227,6 +227,7 @@ arrow pointer
 */
 
 .landing__pointer {
+  opacity: 0;
   border-radius: 10px;
   position: fixed;
   right: 50px;
@@ -238,7 +239,13 @@ arrow pointer
   height: 50px;
   background-color: var(--clr-primary-turqiousGreen);
   padding-left: 0;
-  animation: bounce 1.3s linear infinite;
+  animation: bounce 2s ease-in-out infinite;
+  transition: var(--transition);
+}
+
+.landing__pointer--show {
+  opacity: 1;
+  transition: var(--transition);
 }
 
 @keyframes bounce {

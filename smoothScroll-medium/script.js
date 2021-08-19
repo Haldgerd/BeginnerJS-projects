@@ -3,6 +3,7 @@ const navigationContainer = document.querySelector(".nav__container");
 const navigationLinks = document.querySelector(".nav__container__links");
 const links = document.querySelectorAll(".nav__container__link");
 const yearDisplay = document.querySelector(".current__year");
+const bouncingPointer = document.querySelector(".landing__pointer");
 
 // setting current year dynamically
 let currentYear = new Date ();
@@ -36,4 +37,13 @@ window.addEventListener("scroll", () => {
   } else {
     navigationContainer.classList.remove("nav--scroll");
   }
+
+  if (window.pageYOffset > 500) {
+    bouncingPointer.classList.add("landing__pointer--show");
+  } else {
+    bouncingPointer.classList.remove("landing__pointer--show");
+  }
 });
+
+
+//making smooth scroll land exactly at the beginning of the section we want to navigate to.
