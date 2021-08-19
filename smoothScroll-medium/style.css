@@ -1,1 +1,176 @@
 /* --ff-sitewide: "VT323", monospace; */
+/*
+==========
+variables
+==========
+*/
+:root {
+  --clr-primary-seaGreen: hsl(157, 48%, 43%);
+  --clr-primary-dullBlack: hsl(0, 4%, 22%);
+  --clr-primary-dirtyWhite: rgba(255, 255, 255, 0.897);
+  --clr-primary-turqiousGreen: hsl(175, 89%, 33%);
+  --clr-primary-seaGreenLIght: rgba(57, 162, 122, 0.356);
+  --clr-primary-dirtyBiege: hsl(41, 37%, 70%);
+  --ff-primary: "Secular One", sans-serif;
+  --ff-seconday: "Style Script", cursive;
+  --fs-h1: 6rem;
+  --fs-h2: 3rem;
+  --fs-btn: 1.5rem;
+  --fs-links: 1.2rem;
+  --fs-text: 1.75rem;
+  --padding-nav: 1em 2em;
+  --padding-btn: 0.3em 1em;
+  --padding-text: 1em;
+  --padding-footer: 2em;
+  --transition-btn: 0.3s linear;
+}
+
+/*
+==========
+general
+==========
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* padding: var(--padding-body); */
+  text-align: center;
+  font-size: var(--fs-text);
+  color: var(--clr-primary-dirtyWhite);
+  font-family: var(--ff-seconday);
+}
+
+button {
+  border: 5px solid var(--clr-primary-dirtyWhite);
+  padding: var(--padding-btn);
+  font-size: var(--fs-btn);
+  background-color: transparent;
+  color: var(--clr-primary-dirtyWhite);
+  text-transform: uppercase;
+  transition: var(--transition-btn);
+  margin-top: 1em;
+}
+
+button:hover {
+  background-color: var(--clr-primary-seaGreen);
+  transition: var(--transition-btn);
+}
+
+/* button:focus {
+  border: 10px solid var(--clr-primary-seaGreen);
+} */
+
+a,
+button {
+  /* how to add custom pointer? TBD*/
+  cursor: url("./images/hiker.png");
+}
+
+a {
+  font-size: var(--fs-links);
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--clr-primary-dirtyWhite);
+}
+
+a + a {
+  margin-left: 1em;
+}
+
+h1,
+h2,
+a,
+.company__name {
+  font-family: var(--ff-primary);
+}
+
+h1 {
+  font-size: var(--fs-h1);
+  margin-bottom: 0.3em;
+}
+
+h2 {
+  color: var(--clr-primary-seaGreen);
+  font-size: var(--fs-h2);
+  padding-top: 1em;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--padding-nav);
+  background-color: transparent;
+}
+
+section + section {
+  height: 60vh;
+}
+
+section:nth-child(even) {
+  background-color: var(--clr-primary-seaGreenLIght);
+}
+
+section:nth-child(odd) {
+  background-color: var(--clr-primary-dirtyWhite);
+}
+
+footer {
+  padding: var(--padding-footer);
+  background-color: var(--clr-primary-turqiousGreen);
+}
+
+/*
+==========
+landing section
+==========
+*/
+
+.landing__section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-attachment: fixed; /*SIMPLE PARALAX EFFECT WOW*/
+  background-image: url("./images/lakelanding-photo.jpg");
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100vw, 100vh;
+}
+
+.landing__section__content {
+  transform: translateY(50%);
+}
+
+/* only design value - to create an overlay over the image*/
+.overlay__display {
+  height: 100vh;
+  background-color: var(--clr-primary-seaGreenLIght);
+}
+
+/*
+==========
+NAVBAR section
+==========
+*/
+
+.scroll--active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  background-color: var(--clr-primary-turqiousGreenLight);
+}
