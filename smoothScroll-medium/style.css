@@ -86,7 +86,13 @@ a {
   text-decoration: none;
   text-transform: uppercase;
   color: var(--clr-primary-dirtyWhite);
-  margin-top: 0.5em;
+  line-height: 2.5rem; /* this property makes the whole thing look nice, airy, it adds space between links and takes it into account when calculating height of individual link.*/
+  padding-left: 2.25em;
+}
+
+a:hover:not(.landing__pointer) {
+  color: var(--clr-primary-dullBlack);
+  transition: var(--transition);
 }
 
 h1,
@@ -117,6 +123,17 @@ nav {
   justify-content: space-between;
   padding: var(--padding-nav);
   position: relative;
+}
+
+/* fixed navbar on scroll */
+.nav--scroll {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--clr-primary-turqiousGreen);
+  transition: var(--transition);
 }
 
 section + section {
@@ -167,6 +184,9 @@ NAVBAR section
 ==========
 */
 .nav__container__links {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
   width: 100%;
   height: 0;
   position: absolute;
@@ -175,14 +195,13 @@ NAVBAR section
   text-align: left;
   overflow: hidden;
   transition: var(--transition);
-  padding-left: 2.25em;
-  background-color: var(--clr-primary-seaGreenLIght);
+  background-color: inherit;
 }
 
 /* on click add this class to nav link container*/
-.nav__links--active {
+/* .nav__links--active {
   height: 165px;
-}
+} */
 
 .fa-bars {
   font-size: var(--fs-icons);
@@ -207,20 +226,25 @@ arrow pointer
 ==========
 */
 
-.landing__pointer--active {
+.landing__pointer {
+  border-radius: 10px;
   position: fixed;
-  right: 100px;
-  bottom: 200px;
-  width: 50px;
-  height: 50px;
-  background-color: var(--clr-primary-seaGreen);
+  right: 50px;
+  bottom: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: var(--clr-primary-turqiousGreen);
+  padding-left: 0;
+  animation: bounce 1.3s linear infinite;
 }
 
-.landing__pointer {
-  display: none;
+@keyframes bounce {
+  50% {
+    transform: scale(1.2);
+  }
 }
 
 .fa-arrow-up {
@@ -243,11 +267,12 @@ arrow pointer
   }
 
   .nav__container__links {
-    background-color: transparent;
+    flex-flow: row;
+    align-items: center;
     width: min-content;
+    height: auto !important; /* only to override the javascript set height on nav container*/
     position: static;
-    height: min-content;
-    display: flex;
+    background-color: transparent;
   }
 
   a {
