@@ -9,7 +9,7 @@ variables
   --clr-primary-dullBlack: hsl(0, 4%, 22%);
   --clr-primary-dirtyWhite: rgba(255, 255, 255, 0.897);
   --clr-primary-turqiousGreen: hsl(175, 89%, 33%);
-  --clr-primary-seaGreenLIght: rgba(57, 162, 122, 0.356);
+  --clr-primary-seaGreenLIght: rgba(57, 162, 122, 0.342);
   --clr-primary-dirtyBiege: hsl(41, 37%, 70%);
   --ff-primary: "Secular One", sans-serif;
   --ff-seconday: "Style Script", cursive;
@@ -81,14 +81,12 @@ button {
 }
 
 a {
+  display: block;
   font-size: var(--fs-links);
   text-decoration: none;
   text-transform: uppercase;
   color: var(--clr-primary-dirtyWhite);
-}
-
-a + a {
-  margin-top: 0.4em;
+  margin-top: 0.5em;
 }
 
 h1,
@@ -114,13 +112,11 @@ img {
 }
 
 nav {
-  overflow: hidden;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: var(--padding-nav);
-  background-color: var(--clr-primary-seaGreen);
+  position: relative;
 }
 
 section + section {
@@ -156,7 +152,7 @@ landing section
 }
 
 .landing__section__content {
-  transform: translateY(100%);
+  transform: translateY(90%);
 }
 
 /* only design value - to create an overlay over the image*/
@@ -170,28 +166,22 @@ landing section
 NAVBAR section
 ==========
 */
-
 .nav__container__links {
   width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
   height: 0;
-  /* transform: translateY(0); */
-  display: flex;
-  flex-flow: column;
-  align-items: flex-start;
-  padding: var(--padding-nav-links);
-  background-color: var(--clr-primary-seaGreen);
+  position: absolute;
+  left: 0;
+  top: 128px;
+  text-align: left;
+  overflow: hidden;
   transition: var(--transition);
+  padding-left: 2.25em;
+  background-color: var(--clr-primary-seaGreenLIght);
 }
 
 /* on click add this class to nav link container*/
 .nav__links--active {
-  z-index: 1;
-  height: 300px;
-  transition: var(--transition);
+  height: 165px;
 }
 
 .fa-bars {
@@ -253,17 +243,15 @@ arrow pointer
   }
 
   .nav__container__links {
-    width: min-content;
-    display: flex;
-    flex-flow: row;
-    position: static;
-    z-index: 0;
-    padding: 0;
     background-color: transparent;
+    width: min-content;
+    position: static;
+    height: min-content;
+    display: flex;
   }
 
-  a + a {
+  a {
     margin-top: 0;
-    margin-left: 1em;
+    margin-left: 2em;
   }
 }
