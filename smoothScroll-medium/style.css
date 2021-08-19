@@ -18,11 +18,14 @@ variables
   --fs-btn: 1.5rem;
   --fs-links: 1.2rem;
   --fs-text: 1.75rem;
+  --fs-icons: 2rem;
   --padding-nav: 1em 2em;
   --padding-btn: 0.3em 1em;
   --padding-text: 1em;
   --padding-footer: 2em;
+  --padding-nav-links: 0.3em 1em;
   --transition-btn: 0.3s linear;
+  --transition: 0.5s linear;
 }
 
 /*
@@ -70,7 +73,8 @@ button:hover {
 a,
 button {
   /* how to add custom pointer? TBD*/
-  cursor: url("./images/hiker.png");
+  cursor: url("./images/hiker.png"), pointer;
+  /* should work but doesn+t load it - too big of a file??*/
 }
 
 a {
@@ -81,7 +85,7 @@ a {
 }
 
 a + a {
-  margin-left: 1em;
+  margin-top: 0.4em;
 }
 
 h1,
@@ -93,7 +97,6 @@ a,
 
 h1 {
   font-size: var(--fs-h1);
-  margin-bottom: 0.3em;
 }
 
 h2 {
@@ -108,11 +111,13 @@ img {
 }
 
 nav {
+  overflow: hidden;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: var(--padding-nav);
-  background-color: transparent;
+  background-color: var(--clr-primary-seaGreen);
 }
 
 section + section {
@@ -120,11 +125,11 @@ section + section {
 }
 
 section:nth-child(even) {
-  background-color: var(--clr-primary-seaGreenLIght);
+  background-color: var(--clr-primary-dirtyWhite);
 }
 
 section:nth-child(odd) {
-  background-color: var(--clr-primary-dirtyWhite);
+  background-color: var(--clr-primary-seaGreenLIght);
 }
 
 footer {
@@ -139,13 +144,9 @@ landing section
 */
 
 .landing__section {
-  position: fixed;
-  top: 0;
-  left: 0;
   height: 100vh;
   background-attachment: fixed; /*SIMPLE PARALAX EFFECT WOW*/
   background-image: url("./images/lakelanding-photo.jpg");
-  position: relative;
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100vw, 100vh;
@@ -167,10 +168,97 @@ NAVBAR section
 ==========
 */
 
+.nav__container__links {
+  width: 100%;
+  position: absolute;
+  transform: translateY(0);
+  z-index: -1;
+  /* transform: translateY(0); */
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  padding: var(--padding-nav-links);
+  background-color: var(--clr-primary-seaGreen);
+  transition: var(--transition);
+}
+
+/* on click add this class to nav link container*/
+.nav__links--active {
+  z-index: 1;
+  transform: translateY(100%);
+  transition: var(--transition);
+}
+
+.fa-bars {
+  font-size: var(--fs-icons);
+}
+
+.hamburger__menu {
+  display: block;
+  color: var(--clr-primary-dirtyWhite);
+}
+
 .scroll--active {
   position: fixed;
+  z-index: -1;
   top: 0;
   left: 0;
-  z-index: 5;
   background-color: var(--clr-primary-turqiousGreenLight);
+}
+
+/*
+==========
+arrow pointer
+==========
+*/
+
+.landing__pointer--active {
+  position: fixed;
+  right: 100px;
+  bottom: 200px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--clr-primary-seaGreen);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing__pointer {
+  display: none;
+}
+
+.fa-arrow-up {
+  font-size: var(--fs-icons);
+  color: var(--clr-primary-dirtyWhite);
+}
+
+/* media query*/
+@media screen and (min-width: 900px) {
+  nav {
+    background-color: transparent;
+  }
+
+  .hamburger__menu {
+    display: none;
+  }
+
+  .landing__section__content {
+    transform: translateY(100%);
+  }
+
+  .nav__container__links {
+    width: min-content;
+    display: flex;
+    flex-flow: row;
+    position: static;
+    z-index: 0;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  a + a {
+    margin-top: 0;
+    margin-left: 1em;
+  }
 }
