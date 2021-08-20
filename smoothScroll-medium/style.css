@@ -86,7 +86,7 @@ a {
   text-decoration: none;
   text-transform: uppercase;
   color: var(--clr-primary-dirtyWhite);
-  line-height: 2.5rem; /* this property makes the whole thing look nice, airy, it adds space between links and takes it into account when calculating height of individual link.*/
+  line-height: 2.3rem; /* this property makes the whole thing look nice, airy, it adds space between links and takes it into account when calculating height of individual link.*/
   padding-left: 2.25em;
 }
 
@@ -123,6 +123,7 @@ nav {
   justify-content: space-between;
   padding: var(--padding-nav);
   position: relative;
+  transition: var(--transition);
 }
 
 /* fixed navbar on scroll */
@@ -169,7 +170,7 @@ landing section
 }
 
 .landing__section__content {
-  transform: translateY(90%);
+  transform: translateY(60%);
 }
 
 /* only design value - to create an overlay over the image*/
@@ -191,6 +192,7 @@ NAVBAR section
   height: 0;
   position: absolute;
   left: 0;
+  z-index: 2;
   top: 128px;
   text-align: left;
   overflow: hidden;
@@ -284,6 +286,10 @@ arrow pointer
 
   a {
     margin-top: 0;
-    margin-left: 2em;
+    padding-left: 0;
+  }
+
+  a + a {
+    margin-left: 1.5em;
   }
 }
