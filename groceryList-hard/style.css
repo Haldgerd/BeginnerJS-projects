@@ -24,6 +24,7 @@ variables
   --padding-main: 2em 2em;
   --padding-grocery-container: 1em;
   --padding-btn: 0.35em 0.5em;
+  --padding-alert: 0.2em;
   --padding-input: 0.75em;
   --padding-h1: 0.3em;
   /* transitions */
@@ -68,8 +69,7 @@ button {
 }
 
 h2,
-button,
-input {
+button {
   font-family: var(--ff-primary);
 }
 
@@ -98,6 +98,11 @@ h2 {
   padding-left: 0.5em;
 }
 
+header {
+  width: 100%;
+  text-align: center;
+}
+
 input {
   width: 100%;
   padding: var(--padding-input);
@@ -116,6 +121,28 @@ main {
   border-radius: 10px;
   transform: translateY(50%);
   box-shadow: var(--box-shadow);
+}
+
+/*
+==========
+header alert paragraph styles
+==========
+*/
+.header__alert {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1em;
+  padding: var(--padding-alert);
+  color: var(--clr-primary-dullWhite);
+  font-size: var(--fs-text);
+}
+
+.alert--red {
+  background-color: tomato;
+}
+
+.alert--green {
+  background-color: var(--clr-primary-grassGreen);
 }
 
 /*
@@ -142,6 +169,11 @@ grocery container styles
 */
 
 .grocery__container {
+  display: none;
+}
+
+.grocery__container--visible {
+  display: block;
   display: flex;
   flex-flow: column;
   width: 100%;
