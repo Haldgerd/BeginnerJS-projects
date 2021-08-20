@@ -1,3 +1,109 @@
-/* font-family: 'Anton', sans-serif;
+/*
+==========
+variables
+==========
+*/
+:root {
+  /* primary colors*/
+  --clr-primary-seaGreen: hsl(150, 59%, 64%);
+  --clr-primary-grassGreen: hsl(120, 80%, 28%);
+  --clr-primary-dullWhite: hsl(0, 9%, 96%);
+  --clr-primary-duskBlack: hsl(0, 6%, 16%);
+  --clr-primary-grey: hsl(0, 0%, 58%);
+  /*font variables*/
+  --ff-primary: "Anton", sans-serif;
+  --ff-secondary: "Roboto", sans-serif;
+  --fs-h1: 4rem;
+  --fs-h2: 1.5rem;
+  --fs-btn: 1.25rem;
+  --fs-text: 1.2rem;
+  --fs-icons: 1.25rem;
+  /* padding variables*/
+  --padding-main: 2em 2em;
+  --padding-btn: 0.3em 0.5em;
+  --padding-input: 0.75em;
+  --padding-h1: 0.3em;
+  /* transitions */
+  --transition: 0.3s linear;
+  /*box shadows*/
+  --box-shadow: 3px 10px 20px var(--clr-primary-grey);
+}
 
-font-family: 'Roboto', sans-serif; */
+/*
+==========
+general styles
+==========
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--clr-primary-seaGreen);
+  font-family: var(--ff-secondary);
+}
+
+h1,
+button {
+  text-transform: uppercase;
+}
+
+h2,
+button,
+input {
+  font-family: var(--ff-primary);
+}
+
+button {
+  border: none;
+  padding: var(--padding-btn);
+  font-size: var(--fs-btn);
+  background-color: var(--clr-primary-grassGreen);
+  color: var(--clr-primary-dullWhite);
+  width: 10%;
+}
+
+form {
+  width: 100%;
+  position: relative;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+  padding: var(--padding-h1);
+}
+
+input {
+  width: 100%;
+  padding: var(--padding-input);
+}
+
+main {
+  background-color: var(--clr-primary-dullWhite);
+  margin: 0 auto;
+  width: 70%; /* media query on bigger screen 40%*/
+  padding: var(--padding-main);
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  align-items: center;
+  border-radius: 10px;
+  transform: translateY(100%);
+  box-shadow: var(--box-shadow);
+}
+
+/*
+==========
+submit button styles
+==========
+*/
+.form__button--submit {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
