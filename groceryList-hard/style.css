@@ -6,27 +6,30 @@ variables
 :root {
   /* primary colors*/
   --clr-primary-seaGreen: hsl(150, 59%, 64%);
+  --clr-primary-dullGreen: rgb(127, 202, 29);
   --clr-primary-grassGreen: hsl(120, 80%, 28%);
   --clr-primary-dullWhite: hsl(0, 9%, 96%);
   --clr-primary-duskBlack: hsl(0, 6%, 16%);
-  --clr-primary-grey: hsl(0, 0%, 58%);
+  --clr-primary-grey: hsl(0, 0%, 83%);
+  --clr-primary-darkGrey: hsl(0, 3%, 55%);
   /*font variables*/
   --ff-primary: "Anton", sans-serif;
   --ff-secondary: "Roboto", sans-serif;
   --fs-h1: 4rem;
-  --fs-h2: 1.5rem;
+  --fs-h2: 1.35rem;
   --fs-btn: 1.25rem;
   --fs-text: 1.2rem;
   --fs-icons: 1.25rem;
   /* padding variables*/
   --padding-main: 2em 2em;
-  --padding-btn: 0.3em 0.5em;
+  --padding-grocery-container: 1em;
+  --padding-btn: 0.35em 0.5em;
   --padding-input: 0.75em;
   --padding-h1: 0.3em;
   /* transitions */
   --transition: 0.3s linear;
   /*box shadows*/
-  --box-shadow: 3px 10px 20px var(--clr-primary-grey);
+  --box-shadow: 3px 10px 20px var(--clr-primary-darkGrey);
 }
 
 /*
@@ -41,6 +44,17 @@ general styles
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+article {
+  margin-top: 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+article:hover {
+  background-color: var(--clr-primary-grey);
 }
 
 body {
@@ -65,7 +79,7 @@ button {
   font-size: var(--fs-btn);
   background-color: var(--clr-primary-grassGreen);
   color: var(--clr-primary-dullWhite);
-  width: 10%;
+  width: 15%;
 }
 
 form {
@@ -76,11 +90,18 @@ form {
 h1 {
   font-size: var(--fs-h1);
   padding: var(--padding-h1);
+  color: var(--clr-primary-duskBlack);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+  padding-left: 0.5em;
 }
 
 input {
   width: 100%;
   padding: var(--padding-input);
+  border: 3px solid var(--clr-primary-grassGreen);
 }
 
 main {
@@ -93,7 +114,7 @@ main {
   flex-flow: column;
   align-items: center;
   border-radius: 10px;
-  transform: translateY(100%);
+  transform: translateY(50%);
   box-shadow: var(--box-shadow);
 }
 
@@ -106,4 +127,53 @@ submit button styles
   position: absolute;
   top: 0;
   right: 0;
+  transition: var(--transition);
+}
+
+.form__button--submit:hover {
+  width: 40%;
+  transition: var(--transition);
+}
+
+/*
+==========
+grocery container styles
+==========
+*/
+
+.grocery__container {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+}
+
+/*
+==========
+grocery button styles
+==========
+*/
+.grocery__btn--delete {
+  margin-top: 2em;
+  width: 30%;
+  align-self: center;
+}
+
+/*
+==========
+grocery icon container styles
+==========
+*/
+.grocery__item__btn {
+  width: 50px;
+  height: 50px;
+  transition: var(--transition);
+}
+
+.grocery__item__btn:hover {
+  background-color: var(--clr-primary-dullGreen);
+  transition: var(--transition);
+}
+
+.grocery__item__btn--delete {
+  margin-left: 0.5em;
 }
