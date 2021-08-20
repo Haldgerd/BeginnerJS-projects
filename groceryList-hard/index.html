@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--font awesome icons-->
+
+    <!--google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--stylesheet-->
+    <link rel="stylesheet" href="style.css" />
+
+    <!--javascript-->
+    <script src="script.js" defer></script>
+
+    <title>Grovery Bud Project</title>
+  </head>
+  <body>
+    <main class="main__content">
+      <!-- header -->
+      <header class="main__header">
+        <p class="header__alert"></p>
+        <h1 class="header__title">Grocery Bud</h1>
+      </header>
+      <!-- form -->
+      <form class="form__container">
+        <!-- input -->
+        <input
+          type="text"
+          placeholder="e.g. eggs"
+          name="grocery"
+          id="gorcery"
+          class="form__text--input"
+        />
+        <button type="submit" class="form__button--submit">Add</button>
+      </form>
+
+      <div class="grocery__container">
+        <div class="grocery__list">
+          <!-- <article class="grocery__item">
+            <h2 class="grocery__item__title">item</h2>
+            <div class="grocery__button__container">
+              <button type="button" class="grocery__item__btn--edit">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button type="button" class="grocery__item__btn--delete">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </article> -->
+        </div>
+        <button class="grocery__btn--delete">Clear items</button>
+      </div>
+    </main>
+  </body>
+</html>
