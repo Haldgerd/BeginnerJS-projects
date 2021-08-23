@@ -14,39 +14,94 @@ let editElement;
 let editFlag = false;
 let editID = "";
 
-
-
-// functions
+// MAIN function
 function addItem(e) {
- e.preventDefault();
-  const value = inputField.value; //.value returns the value assigned into input field.
+  e.preventDefault(); // prevent from POST submitting e.g send nowhere.
+
+  const value = inputField.value.toLowerCase(); //.value returns the value assigned into input field by user or "" if there's no input.
   //console.log(value);
 
   // change the alert text when adding a value
   if (value && !editFlag) {
-    alert.textContent = "Item added!"
-    if (alert.classList.contains("alert--red")){
-      alert.classList.remove("alert--red");
-    }
-    alert.classList.add("alert--green");
+    createElement(value);
 
-    // let each item have a specific id if new value is submit.
-    let itemID = new Date().getTime().toString();
-    console.log(itemID);
   } else if (value && editFlag) {
     console.log("editing");
   } else {
-    if (alert.classList.contains("alert--green")) {
-      alert.classList.remove("alert--green");
-    }
-    alert.textContent = "No item was added!"
-    alert.classList.add("alert--red");
+     alertSign("No item was added!", "red")
   }
 }
 
+//alert function
+function alertSign(text, action) {
+  alert.textContent = text;
+  alert.classList.add(`alert--${action}`);
+  
+  setTimeout(() => {
+    alert.textContent = "";
+    alert.classList.remove(`alert--${action}`);
+  }, 1000);
+}
+
+// creates individual articles containg each value passed into input area.
+function createElement(value) {
+  // let each item have a specific id if new value is submit.
+  let itemID = new Date().getTime().toString();
+  const articleElement = document.createElement
+  ("article");
+  articleElement.classList.add(".grocery__item");
+
+  //add specific id to element
+  const attr = document.createAttribute("data-id");
+  attr.value = itemID;
+  articleElement.setAttributeNode(attr);
+
+  articleElement.innerHTML = `
+  <h2 class="grocery__item__title">${value}</h2>
+    <div class="grocery__button__container">
+      <button type="button" class="grocery__item__btn grocery__item__btn--edit"><i class="fas fa-edit"></i>
+      </button>
+      <button
+        type="button"
+        class="grocery__item__btn grocery__item__btn--delete"
+       ><i class="fas fa-trash"></i>
+      </button>
+    </div>`
+
+  // append article to grocery list area
+  list.appendChild(articleElement);
+  alertSign("Item added!", "green");
+  groceryConatainer
+  .classList.add("grocery__container--visible");
+
+  // add to local storage function
+
+  //set to default
+
+}
 
 
-// event listeners
+function addToStorage(id, value){
+  console.log("nothing here yet");
+}
+
+
+// after writing in a value (into input field), revert to initial setup - showing placeholder text.
+function setToDefault() {
+  inputField.value = "";
+  editFlag = false;
+  editID = "";
+  submitBtn.textContent = "add";
+
+}
+
+//clear full list function 
+function clearList(){
+  console.log("empty");
+}
+
+
+// main app functionallity event listeners
 
 //submit form event listener
 formContainer.addEventListener("submit", addItem);
