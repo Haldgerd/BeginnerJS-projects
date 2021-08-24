@@ -66,6 +66,7 @@ function createElement(value) {
   .classList.add("grocery__container--visible");
 
   // add to local storage function
+  addToStorage(attr.value, value);
 
   //set to default
   setToDefault();
@@ -95,6 +96,7 @@ function deleteItem (e) {
     groceryConatainer.classList.remove("grocery__container--visible");
   }
   // remove from local storage
+  removeFromLocalStorage(elementUniqueID);
 
 }  
 
@@ -117,7 +119,17 @@ function editItem (e) {
 // create a local storage - pass values to storage
 // ********** ADD TO LOCAL STORAGE ******
 function addToStorage(id, value){
-  console.log("nothing here yet");
+  const groceryObject = {
+    id: id,
+    item: value
+  };
+
+  let items = localStorage.getItem("list")? JSON.parse(localStorage.getItem("list")): [];
+  //tenary operator ( ?: )=> wut?!
+  console.log(items);
+
+  items.push(groceryObject);
+  localStorage.setItem("list", JSON.stringify(items));
 }
 
 // ******* REMOVE FROM LOCAL STORAGE ******
@@ -145,6 +157,7 @@ function clearItems(){
   groceryConatainer.classList.remove("grocery__container--visible");
 
   // remove items from local storage
+  //removeFromLocalStorage();
   //localStorage.removeItem("list");
   setToDefault();
 }
@@ -161,13 +174,12 @@ function addItem(e) {
     createElement(value);
 
   } else if (value !== "" && editFlag) {
-    console.log("editing");
-    //new function to edit the current article where item was edited?
-    console.log(editElement);
     editElement.innerHTML = value;
-    console.log(editElement);
     alertSign("Item sucessfuly edited!", "green");
+
     // edit item in local storage
+    //editLocalStorage();
+
     //editLocalStorage(editID, editElement);
     setToDefault();
 
