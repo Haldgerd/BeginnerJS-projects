@@ -36,50 +36,37 @@ function setToDefault() {
 
 }
 
-//***** CREATE A GROCERY ITEM TO BE ADDED TO THE LIST ******/
-function createElement(value) {
-  // let each item have a specific id if new value is submit.
-  let itemID = new Date().getTime().toString();
-  const articleElement = document.createElement
-  ("article");
-  articleElement.classList.add(".grocery__item");
-
-  // creates individual articles containing each value passed into input area. Assigns a unique attribute aka. dataset to each item - we used time in ms at each item creation. 
-  const attr = document.createAttribute("data-id");
-  attr.value = itemID;
-  articleElement.setAttributeNode(attr);
-
-  articleElement.innerHTML = `
-    <h2 class="grocery__item__title">${value}</h2>
-    <div class="grocery__button__container">
-      <button type="button" class="grocery__item__btn grocery__item__btn--edit"><i class="fas fa-edit"></i>
-       </button>
-      <button
-        type="button"
-        class="grocery__item__btn grocery__item__btn--delete"
-      ><i class="fas fa-trash"></i>
-      </button>
-    </div>`
+// *********** SET ITEMS FROM LOCAL STORAGEor CREATE NEW ITEMS(user input)  ******* //
+function setItems(id, value){
+    const articleElement = document.createElement
+    ("article");
+    articleElement.classList.add(".grocery__item");
   
-  alertSign("Item added!", "green");
-  groceryConatainer
-  .classList.add("grocery__container--visible");
-
-  // add to local storage function
-  addToStorage(attr.value, value);
-
-  //set to default
-  setToDefault();
-
-  // delete and edit button activated as they are dynmaically created
-  const innerDeleteBtn = articleElement.querySelector(".grocery__item__btn--delete");
-  const editBtn = articleElement.querySelector(".grocery__item__btn--edit");
-
-  innerDeleteBtn.addEventListener("click", deleteItem);
-  editBtn.addEventListener("click", editItem);
-
-  // append article to grocery list area
-  list.appendChild(articleElement);
+    // creates individual articles containing each value passed into input area. Assigns a unique attribute aka. dataset to each item - we used time in ms at each item creation. 
+    const attr = document.createAttribute("data-id");
+    attr.value = id;
+    articleElement.setAttributeNode(attr);
+  
+    articleElement.innerHTML = `
+      <h2 class="grocery__item__title">${value}</h2>
+      <div class="grocery__button__container">
+        <button type="button" class="grocery__item__btn grocery__item__btn--edit"><i class="fas fa-edit"></i>
+         </button>
+        <button
+          type="button"
+          class="grocery__item__btn grocery__item__btn--delete"
+        ><i class="fas fa-trash"></i>
+        </button>
+      </div>`
+  
+    // delete and edit button activated as they are dynmaically created
+    const innerDeleteBtn = articleElement.querySelector(".grocery__item__btn--delete");
+    const editBtn = articleElement.querySelector(".grocery__item__btn--edit");
+  
+    innerDeleteBtn.addEventListener("click", deleteItem);
+    editBtn.addEventListener("click", editItem);
+    // append article to grocery list area
+    list.appendChild(articleElement);  
 }
 
 //*******  DELETE ITEM  **********/
@@ -116,6 +103,13 @@ function editItem (e) {
   submitBtn.textContent = "edit"; 
 }
 
+// **********  CREATE LOCAL STORAGE ******//
+function getLocalStorage() {
+  return localStorage.getItem("list")? JSON.parse(localStorage.getItem("list")) : [];
+  //tenary operator ( ?: )=> wut?!
+
+}
+
 // create a local storage - pass values to storage
 // ********** ADD TO LOCAL STORAGE ******
 function addToStorage(id, value){
@@ -146,18 +140,23 @@ function editLocalStorage(id, editedValue) {
   let items = getLocalStorage();
   items = items.map(item => {
     if (item.id === id) {
-      item.value = value;
+      item.value = Value;
     }
     return item;
   });
   localStorage.setItem("list", JSON.stringify(items));
 }
 
+//*******LOAD STORAGE UPON DOM CONTENT LOADED ****/
+function setupItems(){
+  let items = getLocalStorage();
 
-function getLocalStorage() {
-  return localStorage.getItem("list")? JSON.parse(localStorage.getItem("list")) : [];
-  //tenary operator ( ?: )=> wut?!
-
+  if (items.length > 0) {
+    items.forEach(item => {
+      setItems(item.id, item.value);
+    });
+    groceryConatainer.classList.add("grocery__container--visible");
+  }
 }
 
 //****** DELETE ALL ITEMS IN A GROCERY LIST ******
@@ -183,12 +182,23 @@ function clearItems(){
 function addItem(e) {
   e.preventDefault(); // prevent from POST submitting e.g send nowhere.
 
+  // let each item have a specific id if new value is submit.
+  let itemID = new Date().getTime().toString();
   const value = inputField.value.toLowerCase(); //.value returns the value assigned into input field by user or "" if there's no input.
   //console.log(value);
 
   // change the alert text when adding a value
   if (value && !editFlag) {
-    createElement(value);
+    setItems(itemID, value);
+
+    alertSign("Item added!", "green");
+    groceryConatainer.classList.add("grocery__container--visible");
+  
+    // add to local storage function
+    addToStorage(itemID, value);
+  
+    //set to default
+    setToDefault();
 
   } else if (value !== "" && editFlag) {
     editElement.innerHTML = value;
@@ -214,4 +224,6 @@ formContainer.addEventListener("submit", addItem);
 //listen for clear button onclick event
 deleteAll.addEventListener("click", clearItems);
 
+//load all items from storage on refresh
+window.addEventListener("DOMContentLoaded", setupItems);
 
