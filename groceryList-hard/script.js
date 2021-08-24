@@ -124,24 +124,41 @@ function addToStorage(id, value){
     item: value
   };
 
-  let items = localStorage.getItem("list")? JSON.parse(localStorage.getItem("list")): [];
-  //tenary operator ( ?: )=> wut?!
+  let items = getLocalStorage();
   console.log(items);
-
   items.push(groceryObject);
   localStorage.setItem("list", JSON.stringify(items));
 }
 
 // ******* REMOVE FROM LOCAL STORAGE ******
 function removeFromLocalStorage(id){
-  console.log("empty");
+  let items = getLocalStorage();
+  items = items.filter( item => {
+    if (item.id !== id) {
+      return item
+    }
+  });
+  localStorage.setItem("list", JSON.stringify(items));
 }
 
 // ********* EDIT LOCAL STORAGE ********* //
 function editLocalStorage(id, editedValue) {
-  console.log("empty");
+  let items = getLocalStorage();
+  items = items.map(item => {
+    if (item.id === id) {
+      item.value = value;
+    }
+    return item;
+  });
+  localStorage.setItem("list", JSON.stringify(items));
 }
 
+
+function getLocalStorage() {
+  return localStorage.getItem("list")? JSON.parse(localStorage.getItem("list")) : [];
+  //tenary operator ( ?: )=> wut?!
+
+}
 
 //****** DELETE ALL ITEMS IN A GROCERY LIST ******
 function clearItems(){
@@ -158,7 +175,7 @@ function clearItems(){
 
   // remove items from local storage
   //removeFromLocalStorage();
-  //localStorage.removeItem("list");
+  localStorage.removeItem("list");
   setToDefault();
 }
 
@@ -178,7 +195,7 @@ function addItem(e) {
     alertSign("Item sucessfuly edited!", "green");
 
     // edit item in local storage
-    //editLocalStorage();
+    editLocalStorage(editID, value);
 
     //editLocalStorage(editID, editElement);
     setToDefault();
