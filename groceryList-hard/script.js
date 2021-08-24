@@ -103,9 +103,9 @@ function editItem (e) {
   // setting edit value
   const itemToBeEdited = e.currentTarget.parentElement.parentElement; 
 
-  editElement = itemToBeEdited.querySelector("h2").innerHTML;
+  editElement = itemToBeEdited.querySelector("h2");
   // placing value into input field
-  inputField.value = editElement;
+  inputField.value = editElement.innerHTML;
   console.log(editElement);
   editFlag = true;
   editId = itemToBeEdited.dataset.id;
@@ -163,7 +163,8 @@ function addItem(e) {
   } else if (value !== "" && editFlag) {
     console.log("editing");
     //new function to edit the current article where item was edited?
-    editElement = value;
+    console.log(editElement);
+    editElement.innerHTML = value;
     console.log(editElement);
     alertSign("Item sucessfuly edited!", "green");
     // edit item in local storage
