@@ -107,7 +107,6 @@ function editItem (e) {
 function getLocalStorage() {
   return localStorage.getItem("list")? JSON.parse(localStorage.getItem("list")) : [];
   //tenary operator ( ?: )=> wut?!
-
 }
 
 // create a local storage - pass values to storage
@@ -136,11 +135,11 @@ function removeFromLocalStorage(id){
 }
 
 // ********* EDIT LOCAL STORAGE ********* //
-function editLocalStorage(id, editedValue) {
+function editLocalStorage(id, value) {
   let items = getLocalStorage();
   items = items.map(item => {
     if (item.id === id) {
-      item.value = Value;
+      item.value = value;
     }
     return item;
   });
